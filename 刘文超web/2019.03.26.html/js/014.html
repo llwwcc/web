@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js作业.html</title>
+</head>
+<body>
+	<input type="text" id="text1">
+	<input type="text" id="text2">
+	<!-- <input type="button" value="求和" id="btn"> -->
+	<button id="btn">求和</button>
+</body>
+<script>
+	var oText1 =document.getElementById('text1');
+	var oText2 =document.getElementById('text2');
+	var oBtn = document.getElementById('btn');
+	 oBtn.onclick=function(){
+
+		var yY1 = parseInt(oText1.value);
+		var yY2 = parseInt(oText2.value);
+
+		if(isNaN(yY1)){
+			alert("请在第一个输入框输入正确数字");
+	}else if(isNaN(yY2)){
+		alert("请在第二个输入框输入正确数字");
+	}else{
+		alert(yY1+yY2);
+	}
+    }
+</script>
+</html>

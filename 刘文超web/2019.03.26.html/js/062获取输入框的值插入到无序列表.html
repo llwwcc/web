@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>062获取输入框的值插入到无序列表.html</title>
+</head>
+<body>
+	<input type="text" id="in">
+	<button id="btn">修改</button>
+	<ul id="ul">
+		<li></li>
+	</ul>
+</body>
+<script>
+	var oIn =document.getElementById('in');
+	var oBtn =document.getElementById('btn');
+	var oUl =document.getElementById('ul');
+	oBtn.onclick=function(){
+		var valu =oIn.value;
+		var newli= document.createElement('li');
+		newli.innerHTML =valu;
+		oUl.appendChild(newli);
+		oIn.value="";
+	}
+</script>
+</html>

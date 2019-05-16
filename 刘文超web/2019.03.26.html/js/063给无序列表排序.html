@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>063给无序列表排序.html</title>
+</head>
+<body>
+	<ul id="ul">
+		<li>33</li>
+		<li>22</li>
+		<li>31</li>
+		<li>4</li>
+		<li>15</li>
+		<li>66</li>
+	</ul>
+	<botton id="btn">按钮</botton>
+</body>
+<script>
+	var oUl =document.getElementById('ul');
+	var oBtn =document.getElementById('btn')
+	var aLi =oUl.children;
+	oBtn.onclick= function(){
+		var newli=[];
+		for(var i=0;i<aLi.length;i++){
+			newli.push(aLi[i]);
+			newli.sort(function(aLi1,aLi2){
+				return a
+			});
+		}
+	}
+</script>
+</html>

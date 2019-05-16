@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>盒子旋转.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-image: url(../t.tt/images/8lc.png);
+			background-size:cover;
+			background-repeat: no-repeat;
+			border: 1px solid #000;
+			margin: 100px auto;
+			transform-origin:50px 50px;
+			animation:sport 4s linear infinite;
+		}
+		@keyframes sport{
+			0%{
+				transform: rotateZ(0deg);
+			}
+			25%{
+				transform: rotateZ(90deg);
+			}
+			50%{
+				transform: rotateZ(180deg);
+			}
+			75%{
+				transform: rotateZ(270deg);
+			}
+			100%{
+				transform: rotateZ(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

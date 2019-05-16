@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>小升升</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ul{
+			width: 100%;
+			height: 500px;
+			background-color: skyblue;
+			line-height: 500px;
+			margin: 150px auto;
+			text-align: center;
+		
+		}
+		li{
+			width: 300px;
+			height: 350px;
+			display: inline-block;
+			box-sizing: border-box;
+			margin-right: 20px;
+			vertical-align: middle;
+			border: 5px solid #fff;
+		}
+		li:nth-child(1){
+			transform: rotate(40deg);
+		}
+		li:nth-child(2){
+			transform: rotate(-30deg);
+		}
+		li:nth-child(3){
+			transform: rotate(60deg);
+		}
+		
+		img{
+			width: 100%;
+			height: 350px;
+		}
+		
+		ul:hover li{
+			opacity: 0.5;
+
+		}
+		ul li:hover{
+			transform: rotate(0deg) scale(1.2);
+			transform: all 2s;
+			z-index: 999;
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="http://b256.photo.store.qq.com/psbe?/3c26769e-4f00-49c6-a11f-fef51216ebe6/tKxinhEx7fEwju8EVVO5hlx8FNEcAViAOuMcwCP4NSbI8cQuNaXrel9J8VeyoXXp/m/dAABAAAAAAAAnull&bo=WAJYAgAAAAARBzA!&rf=photolist&t=5" alt=""></li>
+		<li><img src="http://b364.photo.store.qq.com/psb?/V11zGvZm0biWA4/7zikbRIzFcO4tkBIZFD7f0Uk655n4hKtebiGvTRRIDc!/b/dGwBAAAAAAAA&bo=OASgBZAJwAwRCfI!&rf=viewer_4" alt=""></li>
+		<li><img src="http://b272.photo.store.qq.com/psbe?/3c26769e-4f00-49c6-a11f-fef51216ebe6/LIuOuWwUUvYOKvqRWIUQ96ouMT7RncnB*g46giIEw*qN6ZP60f6t7MqSa2PBnDRP/m/dBABAAAAAAAAnull&bo=lgKWApYClgIRBzA!&rf=photolist&t=5" alt=""></li>
+	</ul>
+</body>
+</html>

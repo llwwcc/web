@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>082轮播图.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+.coursel{
+	position: relative;
+	margin: 100px auto;
+	width: 1260px;
+	height: 460px;
+	text-align: center;
+}
+.coursel .coursel-list{
+	width: 100%;
+	height: 100%;
+
+}
+.coursel .fas{
+	position: absolute;
+	z-index: 999;
+	top: 228px;
+	left: 0;
+	width: 50px;
+	height: 70px;
+	margin-top: -35px;
+	line-height: 70px;
+	font-size: 30px;
+	color: #d5d4d1;
+	background-color: rgba(0,0,0,0.2);
+	text-align: center;
+	cursor: pointer;
+}
+.coursel .fas-right{
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	margin-left: 1210px;
+}
+.coursel .fas-left{
+	right: 0;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.coursel .coursel-list li{
+	position: absolute;
+	top: 0；
+	left：0；
+	width: 100%;
+	height: 100%;
+}
+.coursel .coursel-list li img{
+	width: 100%;
+	height: 100%;
+}
+.coursel .coursel-btns{
+	position: absolute;
+	right: 34px;
+	bottom: 20px;
+	z-index: 999;
+}
+.coursel .coursel-btns li{
+	float: left;
+	width: 10px;
+	height: 10px;
+	margin-left: 10px;
+	background-color: #979590;
+	border: 1px solid #979590;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.coursel .coursel-btns li.active{
+	background: red;
+}
+</style>
+</head>
+<body>
+	<div class="coursel">
+		<ul class="coursel-list">
+			<li style="z-index: 9"><img src="../../小米/img/b1.jpg" alt=""></li>
+			<li><img src="../../小米/img/b2.jpg" alt=""></li>
+			<li><img src="../../小米/img/b3.jpg" alt=""></li>
+		</ul>
+		<i class="fas fas-left">&lt;</i>
+		<i class="fas fas-right">&gt;</i>
+		<ul class="coursel-btns">
+			<li class=" active coursel-btns-item"></li>
+			<li class="coursel-btns-item"></li>
+			<li class="coursel-btns-item"></li>
+		</ul>
+	</div>
+</body>
+<script>
+	function tab(){
+		if(nowindex>=aImg.length){
+			nowindex=0;
+		}
+		for(var i=0;i<aImg.length;i++){
+			aImg[i].style.zIndex=0;
+			oBtns[i].className="coursel-btns-item"
+		}
+		aImg[nowindex].style.zIndex=9;
+		oBtns[nowindex].className="coursel-btns-item active"
+	}
+	var aImg =document.querySelectorAll(".coursel-list li");
+	var leftBtn =document.querySelector(".fas-left");
+	var rightBtn =document.querySelector(".fas-right");
+	var oBtns =document.querySelectorAll(".coursel-btns-item");
+	// console.log(aImg);
+	// console.log(leftBtn);
+	// console.log(rightBtn);
+	// console.log(oBtns);
+	var oCousel =document.querySelector(".coursel")
+	var nowindex=0;
+	rightBtn.onclick=function(){
+		nowindex++
+		if(nowindex>=aImg.length){
+			nowindex=0;
+		}
+	// 	for(var i=0;i<aImg.length;i++){
+	// 		aImg[i].style.zIndex=0;
+	// 		oBtns[i].className="coursel-btns-item"
+	// 	}
+	// 	aImg[nowindex].style.zIndex=9;
+	// 	oBtns[nowindex].className="coursel-btns-item active"
+	tab();
+	}
+	
+	leftBtn.onclick=function(){
+		nowindex--
+		if(nowindex<0){
+			nowindex=aImg.length-1;
+		}
+		// for(var i=0;i<aImg.length;i++){
+		// 	aImg[i].style.zIndex=0;
+		// 	oBtns[i].className="coursel-btns-item"
+		// }
+		// aImg[nowindex].style.zIndex=9;
+		// oBtns[nowindex].className="coursel-btns-item active"
+		tab();
+	}
+
+	for(var j=0;j<oBtns.length;j++){
+		oBtns[j].index=j;
+		oBtns[j].onclick=function(){
+			nowindex=this.index;
+			tab();
+	}
+
+	}
+	
+
+
+	timer=setInterval(rightBtn.onclick,1000);
+	oCousel.onmouseover=function(){
+		clearInterval(timer);
+	}
+	oCousel.onmouseout=function(){
+		timer=setInterval(rightBtn.onclick,1000);
+	}
+</script>
+</html>
