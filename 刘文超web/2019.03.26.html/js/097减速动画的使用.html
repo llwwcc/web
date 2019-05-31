@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>088动画的使用.html</title>
+	<title>097减速动画的使用.html</title>
 	<style>
 		*{
 			margin: 0;
@@ -16,7 +16,6 @@
 			width: 100px;
 			height: 100px;
 			background-color: red;
-			/*transition: all 2s linear;*/
 		}
 		#line{
 			position: absolute;
@@ -38,16 +37,19 @@
 	var oBox =document.getElementById('box');
 	var timer =null;
 	oBtn.onclick=function(){
-		// oBox.style.left="400px"
-		clearInterval(timer); //防止多次点击
+			iSpeed= 0;
+		clearInterval(timer);
 		timer=setInterval(function(){
-			console.log(timer)
-			if(oBox.offsetLeft == 400){ //当前值等于400
-				clearInterval(timer);   //清空定时器
+			iSpeed=(400-oBox.offsetLeft)/10;
+			iSpeed =Math.ceil(iSpeed);
+			if(oBox.offsetLeft == 400){
+				clearInterval(timer);
 			 }else{
-			 	oBox.style.left=oBox.offsetLeft +10+'px'
+			 	oBox.style.left=oBox.offsetLeft +iSpeed+'px'
 			}
-		},10)
+				console.log(oBox.offsetLeft,iSpeed);
+		},30)
+
 	}
 </script>
 </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>142原型模式.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function createPerson(name,age){
+		this.name =name;
+		this.age = age;
+	}
+	createPerson.prototype.sayName =function(){
+			console.log("i am" + this.name)
+		}
+	createPerson.prototype.sayHell =function(){
+			console.log("i am" +this.age+ "years old")
+		}	
+	createPerson.prototype.Old =3
+	var person1 = new createPerson('tome',18)
+	console.log(person1);
+	person1.sayName();
+	person1.sayHell();
+	console.log(person1.Old)
+	var person2 = new createPerson('Ammiy',20)
+	console.log(person2);
+	person2.sayName();
+	person2.sayHell();
+	console.log(person2.Old)
+	console.log(person1.sayName==person2.sayName);
+</script>
+</html>

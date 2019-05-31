@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0004-伸缩菜单.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#sub{
+			position: absolute;
+			top: 0;
+			left: -400px;
+			width: 400px;
+			height: 400px;
+			background: #ccc;
+		}
+		#content{
+			position: absolute;
+			top: 0;
+			right:-100px;
+			width: 100px;
+			height: 400px;
+			background: pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="sub">
+		<div id="content"></div>
+	</div>
+</body>
+<script>
+	var oSub = document.getElementById('sub');
+	var timer =null;
+	oSub.onmouseover=function(){
+		clearInterval(timer);
+		timer=setInterval(function(){
+			if(oSub.offsetLeft<0){
+				iSpeed=7;
+			}else{
+				iSpeed=-7;
+			}
+			if(Math.abs(0-oSub.offsetLeft) < Math.abs(iSpeed)){
+				oSub.style.left=0+"px";
+				clearInterval(timer);
+			 }else{
+			 	oSub.style.left=oSub.offsetLeft +iSpeed+'px'
+			}
+		},10)
+	}
+	oSub.onmouseout=function(){
+		clearInterval(timer);
+		timer=setInterval(function(){
+			if(oSub.offsetLeft<-400){
+				iSpeed=7;
+			}else{
+				iSpeed=-7;
+			}
+			if(Math.abs(-400-oSub.offsetLeft) < Math.abs(iSpeed)){
+				oSub.style.left=-400+"px";
+				clearInterval(timer);
+			 }else{
+			 	oSub.style.left=oSub.offsetLeft +iSpeed+'px'
+			}
+		},10)
+	}
+</script>
+</html>

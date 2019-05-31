@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>104事件捕获和冒泡.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 400px;
+			height: 400px;
+			margin:100px auto;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	// var oBtn =document.getElementById('box');
+	// oBtn.addEventListener("click",function(){
+	// 	console.log("box")
+	// },true)
+	// window.addEventListener("click",function(){
+	// 	console.log("windowbox")
+	// },true)
+	// document.documentElement.addEventListener("click",function(){
+	// 	console.log("documentElementbox")
+	// },true)
+	// document.body.addEventListener("click",function(){
+	// 	console.log("document.bodybox")
+	// },true)
+	var oBtn =document.getElementById('box');
+	oBtn.addEventListener("click",function(){
+		console.log("box")
+	},false)
+	window.addEventListener("click",function(){
+		console.log("windowbox")
+	},false)
+	document.documentElement.addEventListener("click",function(){
+		console.log("documentElementbox")
+	},false)
+	document.body.addEventListener("click",function(){
+		console.log("document.bodybox")
+	},false)
+</script>
+</html>

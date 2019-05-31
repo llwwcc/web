@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>065获取输入框的值插入到无序列表的后面并且可以删除该列表项.html</title>
+	<title>0002-留言板.html</title>
 	<style>
 		*{
 			margin: 0;
@@ -16,7 +16,7 @@
 		li{
 			list-style: none;
 			line-height: 40px;
-			border-bottom: 1px dashed #000;
+			border-bottom: 1px dashed #ff6700;
 		}
 		a{
 			float: right;
@@ -27,23 +27,24 @@
 <body>
 	<div class="box">
 		<textarea name="" id="txt" cols="30" rows="10"></textarea>
-		<button id="btn">发布</button>
-		<ul id="list">
-			<!-- <li >aaa<a href="#">撤销</a></li> -->
+		<button id="btn">发布</button>	
+		<ul id="ul">
+			<!-- <li>aaa<a href="javascript">删除</a></li> -->
 		</ul>
-	</div>
+		<img src="https://gss1.bdstatic.com/-vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=0e6a4301fc03918fc3dc359830544df2/3b292df5e0fe9925d17c7db13fa85edf8cb171da.jpg" alt="">	
+	</div>	
 </body>
 <script>
 	var oTxt = document.getElementById('txt');
 	var oBtn = document.getElementById('btn');
-	var oUl = document.getElementById('list');
-	oBtn.onclick=function(){
+	var oUl = document.getElementById('ul');
+	oBtn.onclick = function(){
 		var sVal = oTxt.value;
 		var oLi = document.createElement('li');
-		oLi.innerHTML=sVal;
-		var oA =document.createElement('a');
-		oA.href="#";
-		oA.innerHTML="撤销";
+		oLi.innerHTML = sVal;
+		var oA =document.createElement("a");
+		oA.href ="javascript:;";
+		oA.innerHTML="删除";
 		oLi.appendChild(oA);
 		oA.onclick = function(){
 			oUl.removeChild(this.parentNode);

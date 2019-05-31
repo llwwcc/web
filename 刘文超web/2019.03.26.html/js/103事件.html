@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>103事件.html</title>
+</head>
+<body>
+	<button id="btn">点击</button>
+	<button id="btnoff">移除事件</button>
+</body>
+<script>
+	var oBtn =document.getElementById('btn');
+	var oBtnOff =document.getElementById('btnoff')
+	function show1(){
+		alert("holl 1");
+	}
+	function show2(){
+		alert("holl 2");
+	}
+	function show3(){
+		alert("holl 3");
+	}
+	oBtn.addEventListener("click",show1,false);
+	oBtn.addEventListener("click",show2,false);
+	oBtn.addEventListener("click",show3,false);
+	oBtn.removeEventListener("click",show1,false);
+	
+</script>
+
+</html>

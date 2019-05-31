@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0001-键盘事件.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#bigbox{
+			position: relative;
+			width: 1000px;
+			height: 800px;
+			margin:100px auto;
+			border: 1px solid #000;
+		}
+		#box{position: absolute;
+			top: 0;
+			left: 0;
+			width: 100px;
+			height: 100px;
+			margin-left: 50px;
+		}
+		#box img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+<div id="bigbox">
+	<div id="box">
+		<img src="../2019.03.26.html/js/img/xioaniao.png" alt="">
+	</div>
+</div>
+</body>
+<script>
+	var oImg =document.querySelector('#box img');
+	var oBigbox = document.getElementById('bigbox')
+	var iSpeed =0;
+	var timer =null;
+	document.onkeydown = function(ev){
+		timer=setInterval(function(){
+		if(ev.keyCode ==32){
+			if(oImg.offsetTop<700){
+				iSpeed =(oBigbox.offsetHeight-oImg.offsetHeight)/10;
+				console.log(iSpeed);
+			}
+			else{
+				iSpeed =""; 
+			}
+			clearInterval(timer); 
+			console.log(iSpeed);
+			oImg.style.top=oImg.offsetTop +iSpeed +"px"
+		}
+	},30)
+	
+	}
+</script>
+</html>

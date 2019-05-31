@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>167获取表单.html</title>
+</head>
+<body>
+	<form action="name">
+		<div>
+			用户名：<input type="text"  name="username" id="txt" >
+		</div>
+		<div>
+			密码：<input type="password"  name="password" id="txt" >
+		</div>
+	</form>
+</body>
+<script>
+	var forms =document.forms;
+	var oForm =forms[0];
+	var element =oForm.elements
+	console.log(element);
+	console.log(element.username);
+</script>
+</html>

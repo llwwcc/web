@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>159邮箱验证.html</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<button id="btn">检测</button>
+</body>
+<script>
+	var oTxt =document.getElementById('txt');
+	var oBtn =document.getElementById('btn');
+	oBtn.onclick =function(){
+		var sVal =oTxt.value;
+		var reg =/^[0-9a-z_]+@[a-z]+\.[a-z]{2,5}$/g;
+		// console.log(reg.test(sVal));
+		if(reg.test(sVal)){
+			alert("合法");
+		}else{
+			alert("不合法");
+		}
+	}
+</script>
+</html>

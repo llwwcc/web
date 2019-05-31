@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>160url解析.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = "this a website: http://www.kuazhu.com"
+	var reg =/[a-z]+:\/\/[a-z]{3}\.[a-z]+\.[a-z]{3,5}/
+	console.log(str.match(reg))
+	console.log(str.replace(reg,"*"))
+</script>
+</html>
