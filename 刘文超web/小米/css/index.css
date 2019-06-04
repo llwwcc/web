@@ -24,18 +24,20 @@
 	line-height: 40px;
 	margin-right: 26px;
 	height: 40px;
+	width: 220px;
 }
 .top .user-info .user-info-item{
 		float: left;
 }
 .top .cart{
+	position: relative;
 	/*width: 120px;*/
 	line-height: 40px;
 	height: 40px;
 	text-align: center;
 	float: right;
 }
-.top .cart:hover{
+.top .cart:hover .cart-box{
 	background-color: #fff;
 	
 }
@@ -46,9 +48,30 @@
 	color: #ff6700;
 }
 .top .cart .cart-box{
+	position: relative;
+	z-index: 1000;
+}
+.top .cart .cart-box{
 	font-size: 16px;
 	color: #b0b0b0;
 
+}
+.top .cart .cart-content{
+	position: absolute;
+	top: 40px;
+	right: 0;
+	width: 300px;
+	height: 0;
+	background: #fff;
+	overflow: hidden;
+	z-index: 999;
+	box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+
+}
+.top .cart .cart-content .empty-content{
+	display: none;
+	font-size: 12px;
+	margin-top: 40px;
 }
 /*顶部导航结束*/
 
@@ -211,6 +234,42 @@
 	/*background-color: green;*/
 	
 }
+.home .banner .coursel-content{
+	position: absolute;
+	top: 0;
+	left: 234px;
+	width: 800px;
+	height: 460px;
+	background-color: #fff;
+	z-index: 1000;
+	box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+	display: none;
+}
+.home .banner .coursel-content li{
+	position: relative;
+	float: left;
+	width: 140px;
+	height: 80px;
+	margin-right: 20px;
+
+}
+.home .banner .coursel-content a{
+	width: 140px;
+	height: 60px;
+}
+.home .banner .coursel-content a img{
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+}
+.home .banner .coursel-content a span{
+	position: absolute;
+	top: 20px;
+	left: 70px;
+}
+.home .banner .coursel-content a:hover span{
+	color: #ff6700
+}
 .home .banner .cate{
 	position: absolute;
 	top: 0;
@@ -242,12 +301,13 @@
 	float: right;
 	margin-right: 30px;
 }
+/*
 .home .banner .coursel{
 	position: relative;
 	width: 100%;
 	height: 100%;
 	/*background-color: red;
-*/
+
 }
 .home .banner .coursel .coursel-list{
 	width: 100%;
@@ -304,6 +364,55 @@
 	border: 1px solid #979590;
 	border-radius: 50%;
 }
+*/
+.home .banner img{
+	width: 100%;
+	height: 100%;
+}
+.home .banner .leftbtn,.rightbtn{
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	width: 50px;
+	height: 60px;
+	font-size: 30px;
+	text-align: center;
+	line-height: 60px;
+	color: #fff;
+	background: rgb(0,0,0,0.3);
+	cursor: pointer;
+
+}
+.home .banner .leftbtn{
+	left: 234px;
+}
+.home .banner .rightbtn{
+	right: 0;
+}
+.home .banner .bottom-btn{
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	z-index: 999;
+}
+.home .banner .bottom-btn li{
+	float: left;
+	margin-right: 15px;
+	width: 30px;
+	height: 30px;
+	border: 1px solid #000;
+	background:  rgb(0,0,0,0.5);
+	border-radius: 50%;
+	
+}
+/*加空格是后代 不加是交集*/
+.home .banner .bottom-btn li.active{  
+	background:red;
+
+}
+
+
+
 .home .hot{
 	margin-bottom: 14px;
 	height: 170px; 

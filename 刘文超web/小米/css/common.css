@@ -35,3 +35,45 @@ a:hover{
 	width: 980px;
 	margin-left: 14px;
 }
+ /*laoding 图标*/
+ }
+.laoding{
+	position: relative;
+	width: 3px;
+	height: 20px;
+	margin: 0 auto;
+	margin-top: 50px;
+	background-color: #ff6700;
+	animation:all 0.3s linear 0s alternate infinite;
+}
+.laoding:after,.laoding:before{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 3px;
+	height: 20px;
+	content: "";
+	background-color: #ff6700;
+
+}
+.laoding:before{
+	left: 10px;
+	transform: scale(1,0.5);
+	animation:sport 0.3s linear 0.3s alternate infinite;
+
+}
+.laoding:after{
+	left: -10px;
+	transform: scale(1,0.3);
+	animation:sport 0.3s linear 0.2s alternate infinite;
+}
+@keyframes sport{
+	form{
+		transform: scale(1,0.3);
+		opacity: 0.3;
+	}
+	to{
+		transform: scale(1);
+		opacity: 1;
+	}
+}
