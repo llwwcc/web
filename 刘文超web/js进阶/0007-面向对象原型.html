@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0007-面向对象原型.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function person(name,age){
+		this.name=name;
+		this.age =age;
+	}
+	person.prototype.sayName=function(){
+			console.log('i am'+this.name)
+		}
+	person.prototype.sayAge=function(){
+			console.log('i am'+this.age+'years old')
+		}
+	console.log("person",person);
+	console.log("person.prototype",person.prototype);
+	console.log("person== person.prototype.constructor",person== person.prototype.constructor)
+	console.log("person.prototype.__proto__==Object.prototype",person.prototype.__proto__==Object.prototype);
+	console.log("Object.prototype.__proto__",Object.prototype.__proto__);
+	var p1 = new person("tom",18);
+	console.log(p1); //实例对象
+	p1.sayName();
+	p1.sayAge();
+	var p2 = new person("mity",20);
+	console.log(p2);
+	p2.sayName();
+	p2.sayAge();
+	//实例对象 =原型对象                                              原型对象
+	console.log("p1.__proto__==person.prototype",p1.__proto__==person.prototype);
+	console.log("person.prototype.__proto__==Object.prototype",person.prototype.__proto__==Object.prototype);
+	console.log("Object.prototype.__proto__",Object.prototype.__proto__) //=null;
+
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0011js-进阶.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+function person(name,age){
+	this.name=name;
+	this.age =age;
+}
+person.prototype.sayName=function(){
+		console.log('i am'+this.name)
+	}
+person.prototype.sayAge=function(){
+		console.log('i am'+this.age+'years old')
+	}
+ person.prototype.lnene =5
+	var p1 = new person('tom',18)
+	console.log(p1);
+	console.log(p1.hasOwnProperty('name'));
+	console.log(p1.lnene);
+	console.log(p1.hasOwnProperty('lnene'));
+	console.log("lnene" in p1);
+	function isInProperty(obj,atrr){
+		return !obj.hasOwnProperty("atrr") && ("atrr" in obj);
+	}
+	console.log(isInProperty(p1,"name"));
+	console.log(isInProperty(p1,"age"));
+	console.log(isInProperty(p1,"lnene"));
+</script>
+</html>
