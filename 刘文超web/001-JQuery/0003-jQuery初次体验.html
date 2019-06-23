@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0003-jQuery初次体验.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			margin-top: 10px;
+			text-align: center;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">修改样式</button>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+	<div>5</div>
+	<div>6</div>
+	<div>7</div>
+	<div>8</div>
+	<div>9</div>
+	<div>10</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	// var oBtn=document.getElementById('btn');
+	// var oDiv =document.getElementsByTagName('div');
+	// console.log(oDiv);
+	// oBtn.onclick=function(){
+	// 	for(var i=0;i<oDiv.length;i++){
+	// 		oDiv[i].style.backgroundColor="red";
+	// 	}
+	// }
+	$('#btn').click(function(){
+		$('div').css("backgroundColor","purple")
+	})
+	// $('#btn').click(function(){
+	// 	$('div').css("backgroundColor","pink")
+	// })
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0018-jQurty事件绑定.html</title>
+	<style>
+		.box1{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin-bottom: 10px;
+		}
+		.box2{
+			width: 100px;
+			height: 100px;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">1</div>
+	<div class="box2">2</diov>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+$(function(){
+	// $('div').click(function(){ //jQuery可能没有那么封装多事件
+	// 	alert(111);
+	// })
+	$('div').on("click",function(){  //js中所有的事件都可以实现
+		alert(222);
+	})
+	$('div').hover(function(){  //一个移入一个移出两个函数
+		alert("hover in")
+	},function(){
+		alert('hover out')
+	})
+});
+</script>
+</html>

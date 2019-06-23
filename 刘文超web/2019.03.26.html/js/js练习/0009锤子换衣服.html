@@ -149,7 +149,7 @@
 			</ul>
 		</div>
 		<div class="head-product">
-			<ul>
+			<!-- <ul>
 				<li>
 					<h4>手机</h4>
 					<img src="../img/shouji1.png" alt="">
@@ -160,7 +160,7 @@
 					<img src="../img/shouji1.png" alt="">
 					<span>手机</sapn>
 				</li>
-			</ul>
+			</ul> -->
 		</div>
 	</div>
 	<div class="content">
@@ -243,6 +243,7 @@
 		</div>
 	</div>
 </body>
+<script src="./date.js"></script>
 <script>
 	handleCloth();
 	function handleCloth(){
@@ -287,15 +288,35 @@
 		var oLi = document.querySelectorAll('.head .head-content li');
 		var oProduct = document.querySelector('.head .head-product');
 		for(var i=0;i<oLi.length;i++){
+			oLi[i].index=i;
 			oLi[i].onmouseenter=function(){
+				clearTimeout(timer);
 				oProduct.style.height="300px";
+
+				laoding(this.index);
 			}
 			oLi[i].onmouseleave=function(){
 				timer =setTimeout(function(){
 					oProduct.style.height=0;
-				},300)
-				
+				},300)	
 			}
+		}
+		//加再数据
+		function laoding(index){
+			var data = contentDate[index];
+			console.log(data);
+			var html="";
+				html+='	<ul>';
+				for(var i=0;i<data.length;i++){
+					html+='			<li>';
+					html+='				<h4>'+data[i].title+'</h4>';
+					html+='				<img src="'+data[i].src+'" alt="">';
+					html+='				<span>'+data[i].name+'</sapn>';
+					html+='			</li>';
+				}
+				html+='		</ul>';
+			
+			oProduct.innerHTML=html;
 		}
 		oProduct.onmouseenter=function(){
 			clearTimeout(timer);
@@ -303,18 +324,6 @@
 		oProduct.onmouseleave=function(){
 			oProduct.style.height=0;
 		}
-		
-		var html="";
-		html +=' <li>';
-		html +='	<h4>手机</h4>';
-		html +='	<img src="../img/shouji1.png" alt="">';
-		html +='	<span>手机</sapn>';
-		html +='</li>';
-
-		oProduct.innerHTML=html;
-		var Date=[
-			{}
-		]
 	}
 </script>
 </html>

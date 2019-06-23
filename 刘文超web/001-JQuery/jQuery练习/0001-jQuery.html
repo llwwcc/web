@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0001-jQuery练习.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			margin-bottom: 10px;
+			background: 
+		}
+	</style>
+</head>
+<body>
+	<button>按钮</button>
+	<div>1</div>
+	<div>2</div>
+	<div>3</div>
+	<div>4</div>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	// var oBtn=document.querySelector('button');
+	// var oDiv =document.querySelectorAll('div');
+	// console.log(oDiv);
+	// oBtn.onclick=function(){
+	// 	for(var i=0;i<oDiv.length;i++){
+	// 		oDiv[i].style.background="red";
+	// 	}
+		
+	// }
+	$(function(){
+		$('button').click(function(){
+			$('div').css('background','pink');
+		})
+	})
+</script>
+</html>
