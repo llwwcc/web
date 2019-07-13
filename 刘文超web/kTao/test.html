@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		                //         \\         //          \\       // <br>   ##DDDDDDDDDDDDDDDDDDDDDD##    ## DDDDDDDDDDDDDDDDDDDD ##   <br>  ________   ___   ___        ___   ________   ___   <br>___        ___    ## hh                hh ##   |\   __  \ |\ <br> \ |\  \      |\  \ |\   __  \ |\  \ |\  \      |\  \    ## <br>hh    //    \\    hh ##   \ \  \|\ /_\ \  \\ \  \     \ \  \\ \  \|\ /_\ \  \\ \  \     \ \  \    ## hh   //      \\   hh <br>##    \ \   __  \\ \  \\ \  \     \ \  \\ \   __  \\ \  \\ <br>\  \     \ \  \    ## hh                hh ##     \ \ <br> \|\  \\ \  \\ \  \____ \ \  \\ \  \|\  \\ \  \\ \  \____ \ \  <br>\    ## hh      wwww      hh ##      \ \_______\\ \__\\ <br>\_______\\ \__\\ \_______\\ \__\\ \_______\\ \__\    ## <br>hh                hh ##       \|_______| \|__| \|_______| v\|__| \|_______| \|__| \|_______| \|__|    ## v<br>MMMMMMMMMMMMMMMMMMMM ##    <br>##MMMMMMMMMMMMMMMMMMMMMM##   <br>                          Release 2.6.1. Powered by <br>jinkela-core 2.4.8.   <br>      \/            \/
+	</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		var obj1={'name':'tome'};
+		var obj2={'name':'leo'};
+		$('div').on('show',function($elem,o1,o2){
+			console.log(o1,o2);
+		})
+		$('div').trigger('show',[obj1,obj2])
+		 // $('div').trigger('show',obj1,obj2)
+	});
+</script>
+</html>

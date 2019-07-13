@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>010-练习求和案例.html</title>
+</head>
+<body>
+	<input type="text" id="txt1">
+	<input type="text" id="txt2">
+	<input type="button" value="求和" id="tex3">
+</body>
+<script>
+	var oTxt1 =document.getElementById('txt1');
+	var oTxt2 =document.getElementById('txt2');
+	var oBtn =document.getElementById('tex3');
+	oBtn.onclick=function(){
+		if(isNaN(oTxt1.value)){
+			alert('请在第一个输入框输入正确数字')
+		}else if(isNaN(oTxt2.value)){
+			alert('请在第二个输入框输入正确数字')
+		}else{
+			alert(parseFloat(oTxt1.value)+parseFloat(oTxt2.value))
+		}
+	}
+</script>
+</html>
