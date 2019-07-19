@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0010-map的基本使用.html</title>
+</head>
+<body>
+	
+</body>
+ <script>
+ 	const m= new Map();
+ 	m.set('name','tome');
+ 	console.log("。。。。。。1",m.get('name'))
+ 	console.log(",,,,,2",m.has('name'))
+ 	console.log(",,,,,2",m.has('age'))
+ 	for(key of m.keys()){
+ 		console.log('key',key)
+ 	}
+ 	for(entry of m.entries()){
+ 		console.log('entry',entry)
+ 	}
+ </script>
+</html>
