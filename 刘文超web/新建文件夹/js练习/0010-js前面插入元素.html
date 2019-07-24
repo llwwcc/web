@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0010-js前面插入元素.html</title>
+</head>
+<body>
+	<input type="text">
+	<button>插入</button>
+	<ul id="ul">
+		<!-- <li>1</li> -->
+	</ul>
+</body>
+<script>
+	const text = document.getElementsByTagName('input')[0];
+	console.log(text)
+	const oBtn = document.getElementsByTagName('button')[0];
+	const oUl =document.getElementById('ul');
+	oBtn.onclick=()=>{
+		// console.log(1111)
+		var sval = text.value;
+		var newLi=document.createElement('li');
+		newLi.innerHTML=sval;
+		oUl.insertBefore(newLi,oUl.firstChild);
+		text.value="";
+	}
+</script>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0026-promise.race()的使用法法.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	const getData=(delay)=>new Promise((resolve,reject)=>{
+		setTimeout(function(){
+			resolve('ok'+delay+'success')
+		},delay)
+	})
+	const p=[200,500,1000].map(getData(delay)=>{
+		
+	})
+	Promise.race(p)
+	console.log(p)
+</script>
+</html>

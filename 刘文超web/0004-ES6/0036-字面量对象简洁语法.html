@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0036-字面量对象简洁语法.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	const username ='tome';
+	const age =18;
+	const obj={
+		username,
+		age,
+		sayName(){
+			console.log('my name is'+this.username)
+		},
+		sayAge(){
+			console.log('i am '+this.age+'years old')
+		}
+	}
+	console.log(obj)
+	obj.sayAge();
+	obj.sayName();
+</script>
+</html>
