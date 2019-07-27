@@ -7,7 +7,5 @@
 **/node_modules
 **/dist
 **/db
-*.jpg
-*.png
-*.jpeg
 node_modules/
+*/node_modules
