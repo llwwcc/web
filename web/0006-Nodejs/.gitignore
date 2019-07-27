@@ -10,4 +10,4 @@
 *.jpg
 *.png
 *.jpeg
-
+node_modules/
