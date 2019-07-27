@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>170表单重置.html</title>
+</head>
+<body>
+<form action="http://www.kuazhu.com" target="-blank">
+	<input type="text" name="username">
+	<input type="submit" value="提交">
+	<input type="image"src="img/xioaniao.png">
+	<button id="btn">提交</button>
+</form>
+	
+</body>
+<script>
+	var fomrs =document.forms[0];
+	var form = fomrs.username;
+	form.onsubmit = function(){
+		console.log("form.onsubmit");
+	}
+	
+</script>
+</html>

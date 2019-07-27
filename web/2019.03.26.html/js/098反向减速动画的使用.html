@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>098反向减速动画的使用.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		
+		#box{
+			position: absolute;
+			top: 50px;
+			left: 800px;
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+		#line{
+			position: absolute;
+			top: 0;
+			left: 400px;
+			width: 1px;
+			height: 400px;
+			border-right: 1px solid #000;
+	</style>
+</head>
+<body>
+	<button id="btn">开始</button>
+	<div id="box"></div>
+	<div id="line"></div>
+
+</body>
+<script>
+	var oBtn =document.getElementById('btn');
+	var oBox =document.getElementById('box');
+	var timer =null;
+	oBtn.onclick=function(){
+		iSpeed= 0;
+		clearInterval(timer);
+		timer=setInterval(function(){
+			iSpeed=(400-oBox.offsetLeft)/10;
+			iSpeed =Math.floor(iSpeed);
+			if(oBox.offsetLeft == 400){
+				clearInterval(timer);
+			 }else{
+			 	oBox.style.left=oBox.offsetLeft +iSpeed+'px'
+			}
+				console.log(oBox.offsetLeft,iSpeed);
+		},30)
+
+	}
+</script>
+</html>

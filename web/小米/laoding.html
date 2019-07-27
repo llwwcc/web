@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>laoding.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.laoding{
+			position: relative;
+			width: 3px;
+			height: 20px;
+			margin: 50px auto;
+			background-color: #ff6700;
+			animation:sport 0.3s linear 0s alternate infinite;
+		}
+		.laoding:after,.laoding:before{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 3px;
+			height: 20px;
+			content: "";
+			background-color: #ff6700;
+
+		}
+		.laoding:before{
+			margin-left: -10px;
+			transform: scale(1,0.5);
+			animation:sport 0.3s linear 0.3s alternate infinite;
+
+		}
+		.laoding:after{
+			margin-left: 10px;
+			transform: scale(1,0.3);
+			animation:sport 0.3s linear 0.2s alternate infinite;
+		}
+		@keyframes sport{
+			form{
+				transform: scale(1,0.3);
+				opacity: 0.3;
+			}
+			to{
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="laoding"></div>
+</body>
+</html>

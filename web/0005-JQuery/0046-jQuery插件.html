@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0046-jQuery插件.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<button>设置样式</button>
+	<div>1</div>
+	<div>2</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$.prototype.setColor=function(options){
+		var DEFAULTS = {color:'blue'};
+		var options = $.extend({},DEFAULTS,options);
+		return this.each(function(){
+		this.style.color = options.color;
+		});
+	}
+	
+</script>
+<script>
+	$(function(){
+		$('button').on('click',function(){
+			// $('div').css({'color':'red'});
+			// $('div').setColor({});
+			$('div').setColor({color:'red'});
+			
+		})
+	});
+</script>	
+</html>

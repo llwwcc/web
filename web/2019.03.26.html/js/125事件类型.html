@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>125事件类型.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#father{
+			width: 400px;
+			height: 400px;
+			background: red;
+			margin:100px auto;
+			overflow: hidden;
+		}
+		#son{
+			width: 200px;
+			height: 200px;
+			background: green;
+			margin:100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="son"></div>
+	</div>
+</body>
+<script>
+	var oFather = document.getElementById('father');
+	var oSon  = document.getElementById('son');
+	oFather.onclick = function(ev){
+		console.log(ev.target);
+		console.log(ev.currentTarget);
+		console.log(ev.type);
+	}
+</script>
+</html>

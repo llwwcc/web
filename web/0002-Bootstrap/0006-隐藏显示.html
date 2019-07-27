@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>0006-隐藏显示.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			display: block;
+			color: skyblue;
+			font-size: 30px;
+		}
+		@media screen and (min-width:500px){
+				.container{
+					display: none;
+					
+				}
+		}
+		@media screen and (min-width:768px) and (max-width: 992px){
+				.container{
+					display: block;
+					color: skyblue;
+					font-size: 50px;
+				}
+		}
+		@media screen and (min-width:992px) and (max-width: 1200px){
+				.container{
+					display: block;
+					color: purple;
+					font-size: 40px;
+				}
+		}
+		@media screen and (min-width:1200px){
+				.container{
+					display: none;
+				}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		hello,你好啊
+	</div>
+</body>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</html>

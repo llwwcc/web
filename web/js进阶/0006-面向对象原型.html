@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0006-面向对象原型.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function person(name,age){
+		this.name=name;
+		this.age =age;
+	}
+	console.log("person",person);
+	console.log("person.prototype",person.prototype);
+	console.log("person== person.prototype.constructor",person== person.prototype.constructor)
+	console.log("person.prototype.__proto__==Object.prototype",person.prototype.__proto__==Object.prototype);
+	console.log("Object.prototype.__proto__",Object.prototype.__proto__);
+</script>
+</html>

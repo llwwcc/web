@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" name="test1" value="aa">
+	<input type="text" name="test2" value="bb">
+	<input type="submit" checked value="按钮">
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+$(function(){
+	console.log($('input').attr('name'));
+	console.log($('input').prop('name'));
+	console.log($('input').eq(1).attr('name'));
+	console.log($('input').eq(1).prop('name'));
+	console.log($('input').attr('name',"55"));
+	console.log($('input').removeAttr('name'));
+});
+</script>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>071脚本关闭网页.html</title>
+</head>
+<body>
+	<textarea name="" id="text" cols="30" rows="10"></textarea>
+	<button id="btn">打开网页</button>
+</body>
+<script>
+	var oText =document.getElementById('text');
+	var oBtn =document.getElementById('btn');
+	oBtn.onclick=function(){
+		var sVal =oText.value;
+		var newWi= window.open();
+		newWi.document.write(sVal); 
+	}
+</script>
+</html>

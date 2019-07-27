@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>004-练习.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ul{
+			width: 400px;
+			height: 600px;
+			border: 1px solid #000;
+			margin: 20px auto;
+		}
+		ul li{
+			width: 80px;
+			height: 80px;
+			background: red;
+			margin-bottom: 20px;
+			line-height: 80px;
+			text-align: center;
+			transition-property: margin-left;
+			transition-duration: 500ms;
+		}
+		ul:hover li{
+			margin-left:320px;
+		}
+		ul li:nth-child(1){
+			transition-timing-function: normal;
+		}
+		ul li:nth-child(2){
+			transition-timing-function: linear;
+		}
+		ul li:nth-child(3){
+			transition-timing-function: ease;
+		}
+		ul li:nth-child(4){
+			transition-timing-function: ease-in;
+		}
+		ul li:nth-child(5){
+			transition-timing-function: ease-out;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>默认</li>
+		<li>linear</li>
+		<li>ease</li>
+		<li>ease-in</li>
+		<li>ease-out</li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>120默认功能 右键点击.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#mun{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 300px;
+			height: 400px;
+			background: pink;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="mun"></div>
+</body>
+<script>
+	var oMnu = document.getElementById('mun');
+	document.oncontextmenu = function(ev){
+		oMnu.style.display ="block"
+		oMnu.style.left =ev.clientX + "px";
+		oMnu.style.top =ev.clientY + "px";
+		ev.preventDefault();
+	}
+	oMnu.onclick =function(ev){
+		ev.stopPropagation();
+	}
+	document.onclick = function(){
+		oMnu.style.display="none"
+	}
+</script>
+</html>

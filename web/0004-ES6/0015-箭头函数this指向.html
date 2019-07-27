@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0015-箭头函数this指向.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// function num(id){
+	// 	this.id =id;
+	// 	setTimeout(function(){
+	// 		console.log(this,this.id)
+	// 	},1000)
+	// }
+	// var id =33;
+	// var t = new num(55);
+
+
+	function num(id){
+		this.id =id;
+		setTimeout(()=>{
+			console.log(this,this.id)
+		},1000)
+	}
+	var id =33;
+	var t = new num(55);
+</script>
+</html>

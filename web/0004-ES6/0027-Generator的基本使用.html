@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0027-Generator的基本使用.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function * gen(){
+		console.log('..111')
+		yield 'data1';
+		console.log('do something');
+		yield 'do something';
+		 console.log('do something');
+	}
+	const p=gen()
+	// console.log(gen())
+	console.log(p.next())
+	console.log(p.next())
+	console.log(p.next())
+
+</script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0002-运行错误.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var a=1;//数字类型
+	// a(); // 函数类型
+	//无法调用
+	//报错不能起作用
+	//爆栈
+	function fn(){
+		fn()
+	}
+	fn();
+</script>
+</html>

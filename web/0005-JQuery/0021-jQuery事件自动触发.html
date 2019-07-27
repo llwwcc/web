@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0021-jQuery事件自动触发.html</title>
+	<style>
+		.box2{
+			margin-left: 200px;
+			margin-top: 200px;
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+		}
+		.box1{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box2">
+		<div class="box1">1</div>
+	</div>
+	
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+$(function(){
+	$('.box2').on('click',function(){
+		alert(2222)
+	})
+	$('.box1').on('click',function(){
+		alert('aaaaa')
+	})
+	// $('.box1').trigger('click'); // 不会阻止事件冒泡
+	$('.box1').triggerHandler('click');//会阻止事件冒泡
+});
+</script>
+</html>

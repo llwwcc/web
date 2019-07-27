@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0012-js评论案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style:none;
+		}
+		div{
+			margin:100px auto;
+			width: 300px;
+			height: 500px;
+		}
+		li{
+			border-bottom: 1px dotted #000
+		}
+		a{
+			float: right;
+			color:purple;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<textarea name="" id="text" cols="30" rows="10"></textarea>
+		<button id="btn">插入</button>
+		<ul id="list">
+			<!-- <li>111<a href="javascript:;">撤销</a></li> -->
+		</ul>
+	</div>
+
+</body>
+<script>
+	var oText =document.getElementById('text');
+	var oUl =document.getElementById('list');
+	var oBtn =document.getElementById('btn');
+	oBtn.onclick=()=>{
+		var sval= oText.value;
+		var aLi = document.createElement('li')
+		aLi.innerHTML=sval;
+		var oA  = document.createElement('a')
+		oA.href='javascript:;';
+		oA.innerHTML='撤销';
+		aLi.appendChild(oA)
+		oA.onclick=function(){
+			console.log(this)
+			oUl.removeChild(this.parentNode)
+		}
+		oUl.insertBefore(aLi,oUl.first);
+		oText.value="";
+	}
+</script>
+</html>

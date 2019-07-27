@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11.动画轮换波动.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 800px;
+			height: 400px;
+			border: 5px solid #000;
+			margin: 50px auto;
+			overflow: hidden;
+			
+		}
+		ul{
+			width: 2400px;
+			animation: yy 2s linear infinite;
+			z-index: 0.1;
+		}
+		 li{
+		 	list-style: none;
+			float: left;	
+		}
+		img{
+			width: 800px;
+			height: 400px;
+		}
+		ul:hover{
+			animation: paused;
+			z-index: 1;
+		}
+		@keyframes yy{
+			form{
+				margin-left: 0;
+			}
+			to{
+				margin-left: -1600px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li><img src="../img/4.jpg" alt=""></li>
+			<li><img src="../img/5.jpg" alt=""></li>
+			<li><img src="../img/4.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0003-面向对象.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+ function Person(name,age,major){
+ 	this.name= name;
+ 	this.age =age;
+ 	this.major=major;
+ }	
+ Person.prototype.sayName=function(){
+ 	console.log("i "+"am" +this.name)
+ }
+ Person.prototype.sayAge=function(){
+ 	console.log("i "+"am" +this.age+ "years"+" old")
+ }
+ Person.prototype.sayMajor=function(){
+ 	console.log("my major is" +  this.major)
+ }
+ var person= new Person("tom",18,"math")
+ console.log(person);
+ person.sayName();
+ person.sayAge();
+ person.sayMajor();
+</script>
+</html>

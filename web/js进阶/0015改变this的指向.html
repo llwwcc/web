@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0015改变this的指向.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function show(n1,n2){
+		console.log(this,n1,n2);
+	}
+	show(1,2);
+	show.call({name:"tom"},1,2);
+	show.apply({name:"anmy"},[1,3]);
+	show.bind({name:"tom"})(1,5);
+	// 对象是null，this指向window
+	show.call( null,1,2);
+	show.apply(null,[1,3]);
+	show.bind(null)(1,5);
+</script>
+</html>

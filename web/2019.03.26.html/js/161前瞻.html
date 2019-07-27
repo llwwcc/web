@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>161前瞻.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str ="a1v1c2f$$b2n#"
+	var reg=/[a-z](?=\d)/g; //正向前瞻
+	var reg2=/[a-z](?!\d)/g; //负向前瞻
+	console.log(str);
+	console.log(str.replace(reg,"*"));
+	console.log(str.replace(reg2,"*"));
+</script>
+</html>

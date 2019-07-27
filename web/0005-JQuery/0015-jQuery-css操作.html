@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0015-jQuery-css操作.html</title>
+	<style>
+		.box1{
+			text-align: center;
+			line-height: 100px;
+			width: 100px;
+			height: 100px;
+			background:red;
+			margin-bottom: 10px;
+		}
+		.box2{
+			text-align: center;
+			line-height: 200px;
+			width: 200px;
+			height: 200px;
+			background:pink;
+		}
+	</style>
+</head>
+<body>
+	<div class="box1">1</div>
+	<div class="box2">2</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+$(function(){
+	// $('div').css("width",300).css("height",400).css("background","green");
+	$('div').css({
+		width:400,
+		height:200,
+		backgroundColor:"skyblue"
+	})
+	console.log($('div').hasClass('box1'));
+	console.log($('div').hasClass('box3'));
+});
+</script>
+</html>

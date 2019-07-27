@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>7.照片墙.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		ul{
+			width: 100%;
+			height: 500px;
+			background-color: skyblue;
+			line-height: 500px;
+			margin: 150px auto;
+			text-align: center;
+		
+		}
+		li{
+			width: 300px;
+			height: 350px;
+			display: inline-block;
+			box-sizing: border-box;
+			margin-right: 20px;
+			vertical-align: middle;
+			border: 5px solid #fff;
+		}
+		li:nth-child(1){
+			transform: rotate(40deg);
+		}
+		li:nth-child(2){
+			transform: rotate(-30deg);
+		}
+		li:nth-child(3){
+			transform: rotate(60deg);
+		}
+		
+		img{
+			width: 100%;
+			height: 350px;
+		}
+		
+		ul:hover li{
+			opacity: 0.5;
+
+		}
+		ul li:hover{
+			transform: rotate(0deg) scale(1.2);
+			transform: all 2s;
+			z-index: 999;
+			opacity: 1;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="../img/4.jpg" alt=""></li>
+		<li><img src="../img/5.jpg" alt=""></li>
+		<li><img src="../img/6.jpg" alt=""></li>
+	</ul>
+</body>
+</html>

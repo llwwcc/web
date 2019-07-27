@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0011-jQuery内容过滤器.html</title>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div><p>我是div</p></div>
+	<div>我是段落</div>
+	<div class="div">我是段落</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+$(function(){
+	console.log($('div:empty'));
+	console.log($('div:parent'));
+	console.log($('div:contains(div)'));
+	console.log($('div:has(div)'));
+});
+</script>
+</html>

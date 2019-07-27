@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0018-promise then的使用方法.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	  const promise = new Promise((resolve,rejected)=>{
+	  	//异步处理逻辑
+	  	//如果处理成功调用resolve 由pending转化为fulfilled 
+	  	//如果处理不成功调用reject 由pending转化为reject
+	  	setTimeout(()=>{
+	  		resolve('ok');
+	  	},0) 
+	  })
+	// console.log(promise)
+	// promise.then((data)=>{
+	// 	console.log(data);
+	// 	console.log(promise)
+	// })
+	/*
+	const p1= promise
+	p1.then(data=>{
+		console.log(data+'=' + 'food')
+	})
+	*/
+	const p1 =promise;
+	let p2;
+	p1.then(data=>{
+		p2= new Promise((resovle,reject)=>{
+			  	setTimeout(()=>{
+			  		resovle('ok');
+			  	},0) 
+		})
+
+		return p2
+	})
+	p1.then(data=>{
+		console.log('...p2',p2);
+		console.log('...p1',p1)
+		p2.then(data=>{
+			console.log(data)
+		})
+
+	})
+
+	
+	// 1.promise的then方法返回的是新的promise，无论then方法返回的是否是promise对象,都是新的pormise
+	// 2.新的promise对象的then方法的直是一个promise
+	// 3.then方法的返回值，如果是具体的数据，返回值是数据，如果返回的是promise成功是的返回值
+</script>
+</html>

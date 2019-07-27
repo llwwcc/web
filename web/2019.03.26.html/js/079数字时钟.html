@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>079数字时钟.html</title>
+	<style>
+		body{
+			background: #000;
+		}
+		#box{
+			text-align: center;
+			font-size: 40px;
+			color:#fff;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<!-- 12:14:23 -->
+	</div>
+</body>
+<script>
+	var time=document.getElementById('box');
+	function str(num){
+		return num<10 ? "0" +num : ""+num;
+	}
+	function showTime(){
+		var today = new Date();
+		var hours =today.getHours();
+		var minute =today.getMinutes();
+		var second =today.getSeconds();
+		time.innerHTML=str(hours) +":"+str(minute)+":"+str(second)
+	}
+	setInterval(showTime,0);
+	 showTime();
+</script>
+</html>

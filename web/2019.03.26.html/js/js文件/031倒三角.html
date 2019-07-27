@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>031倒三角.html</title>
+	<style>
+		.sta{
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+		}
+	</style>
+</head>
+<body>
+	
+</body>
+<script>
+	for(var i =1 ; i<6; i++){
+		for(var k= 1; k<6-i;k++){
+			document.write("<span class='sta'></span>")
+		}
+		for(var j= 1; j<=i;j++){
+			document.write("<span class='sta'>*</span>")
+		}
+		document.write("<br>")
+	}
+</script>
+</html>

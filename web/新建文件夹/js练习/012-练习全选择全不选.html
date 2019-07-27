@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>012-练习全选择全不选.html</title>
+</head>
+<body>
+	<input type="button" value="全选" id="txt1">
+	<input type="button" value="全不选" id="txt2">
+	<input type="button" value="反选" id="txt3">
+	<div>
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+	</div>
+</body>
+<script>
+	var oBtn1=document.getElementById('txt1');
+	var oBtn2=document.getElementById('txt2');
+	var oBtn3=document.getElementById('txt3');
+	var aInput = document.querySelectorAll('div input');
+	console.log(aInput);
+	oBtn1.onclick=function(){
+		for(var i=0;i<aInput.length;i++){
+			aInput[i].checked=true;
+		}
+	}
+	oBtn2.onclick=function(){
+		for(var i=0;i<aInput.length;i++){
+			aInput[i].checked=false;
+		}
+	}
+	oBtn3.onclick=function(){
+		for(var i=0;i<aInput.length;i++){
+			if(aInput[i].checked ==true){
+				aInput[i].checked=false;
+			}else{
+				aInput[i].checked=true;
+			}
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0002-jQuery对象常见方法.html</title>
+</head>
+<body>
+	<div class="div1" >1</div>
+	<div class="div2" id="box">2</div>
+	<div class="div3">3</div>
+	<div class="div4">4</div>
+	<div class="div5">5</div>
+	<div class="div6" data-name="hello">6</div>
+</body>
+<script src="../js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		$('div').index() //默认是第一个下标
+		console.log($('div').index());
+		console.log($('div').index(document.getElementById('box')));
+		console.log($('div').index($('.div5')));
+
+		$('div').each(function(index,element){
+			console.log("index,element",index,element);
+		})
+
+		$.each($('div'),function(index,element){ 
+			console.log("index,element",index,element);
+		})
+		$('.div1').data("kuazhu","nihao")
+		console.log($('.div1').data('kuazhu'));
+		console.log($('.div6').data("name"));
+		console.log($('div').is('.div3'));
+		console.log($('div').is('.div7'));
+	});
+</script>
+</html>
