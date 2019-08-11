@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>test.html</title>
+</head>
+<body>
+	<h1>test</h1>
+	<button id="get">send get</button>
+	<button id="get2">send post</button>
+	
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+	
+	   $("#get").on('click',function(){
+	   		$.ajax({
+	   			url:'/users/34/books/8989',
+	   			type:'get',
+	   			success:function(result){
+	   				console.log('result...',result)
+	   			}
+
+	   		})
+	   })
+	   $("#get2").on('click',function(){
+	   		$.ajax({
+	   			url:'/?userId=123&bookId=999',
+	   			type:'get',
+	   			success:function(result){
+	   				console.log('result...',result)
+	   			}
+
+	   		})
+	   })
+	});
+</script>
+</html>

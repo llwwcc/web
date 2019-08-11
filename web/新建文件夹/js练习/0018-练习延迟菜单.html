@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0018-练习延迟菜单.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 700px;
+			margin:100px auto;
+			text-align: center;
+		}
+		#left{
+			float: left;
+			width: 100px;
+			height: 500px;
+			background-color: blue;
+		}
+		#right{
+			float: left;
+			width: 500px;
+			height: 500px;
+			margin-left: 20px;
+			background-color: pink;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div id="left"></div>
+		<div id="right"></div>
+	</div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	var oLeft = document.getElementById('left');
+	var oRight = document.getElementById('right');
+	var timer = null;
+	oLeft.onmouseenter=()=>{
+		clearTimeout(timer)
+		oRight.style.display='block';
+
+	}
+	oLeft.onmouseleave=()=>{
+		timer =setTimeout(function(){
+			oRight.style.display='none';
+		},300)
+		
+	}
+	oRight.onmouseenter=()=>{
+		clearTimeout(timer)
+		oRight.style.display='block';
+	}
+	oRight.onmouseleave=()=>{
+		timer =setTimeout(function(){
+			oRight.style.display='none';
+		},300)
+		
+	}
+</script>
+</html>

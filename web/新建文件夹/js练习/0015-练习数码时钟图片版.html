@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0015-练习数码时钟图片版.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			background-color: #000;
+		}
+		div{
+		
+			line-height: 60px;
+			margin: 100px auto;
+			font-size: 40px;
+			color: #fff;
+			text-align: center;
+		}
+		img{
+			visibility: middle;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<img src="images/1.png" alt="">
+		<img src="images/6.png" alt="">
+		：
+		<img src="images/5.png" alt="">
+		<img src="images/5.png" alt="">
+		：
+		<img src="images/5.png" alt="">
+		<img src="images/3.png" alt="">
+	</div>
+</body>
+<script>
+	function toStr(num){
+		return num<10 ? "0"+num: ""+num; 
+	}
+	var timer=document.getElementById('box');
+	var aImg=timer.children;
+	
+	function showTime(){
+		
+		var today=new Date()
+		var hours=today.getHours();
+		var minutes = today.getMinutes();
+		var seconds =today.getSeconds();
+		timer=toStr(hours)+toStr(minutes)+toStr(seconds)
+		for(var i=0;i<aImg.length;i++){
+			aImg[i].src="images/"+timer.charAt(i)+".png"
+		}
+		
+	}
+	showTime()
+	setInterval(showTime,1000)
+</script>
+</html>

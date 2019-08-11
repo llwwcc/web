@@ -1,0 +1,17 @@
+
+.App{
+	width: 700px;
+	margin:100px auto;
+}
+.App input{
+	width: 500px;
+	height: 40px;
+	outline: none;
+	font-size: 25px;
+	box-sizing: border-box;
+}
+.btn{
+	width: 40px;
+	height: 45px;
+	box-sizing: border-box;
+}

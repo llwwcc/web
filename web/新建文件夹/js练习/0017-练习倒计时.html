@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0017-练习倒计时.html</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			background-color: #000;
+		}
+		div{
+			margin: 100px auto;
+			font-size: 40px;
+			color: #fff;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		距离活动时间还有8小时23分56秒结束
+	</div>
+</body>
+<script>
+	function toStr(num){
+		return num<10 ? "0"+num :""+num;
+	}
+	var time=0;
+	var timer=document.getElementById('box');
+	function endTime(){
+		var endTimer = new Date("2019-9-15 12:00:00") 
+		var allMinSeconds = endTimer.getTime()-Date.now();
+		if(allMinSeconds<=0){
+			allMinSeconds=0;
+			clearInterval(time)
+		}
+		var allSeconds = parseInt(allMinSeconds/1000);
+		var iHour = parseInt(allSeconds/3600);
+		var iMinutes = parseInt(allSeconds%3600/60);
+		var iSeconds = parseInt(allSeconds%3600%60%60)
+		timer.innerHTML="距离开时间还有"+toStr(iHour)+"小时"+toStr(iMinutes)+"分"+toStr(iSeconds)+"秒 加油鸭！"
+	}
+	endTime()
+	time =setInterval(endTime,1000)
+</script>
+</html>

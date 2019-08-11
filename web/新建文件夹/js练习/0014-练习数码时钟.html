@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0014-练习数码时钟.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			background-color: #000;
+		}
+		div{
+			width: 200px;
+			margin: 100px auto;
+			font-size: 40px;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		15:12:45
+	</div>
+</body>
+<script>
+	function toStr(num){
+		return num<10 ? "0"+num: ""+num; 
+	}
+	function showTime(){
+		var timer=document.getElementById('box');
+		var today=new Date()
+		var hours=today.getHours();
+		var minutes = today.getMinutes();
+		var seconds =today.getSeconds();
+		timer.innerHTML=toStr(hours)+':'+toStr(minutes)+":"+toStr(seconds)
+	}
+	showTime()
+	setInterval(showTime,1000)
+</script>
+</html>

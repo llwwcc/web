@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index-middle.html</title>
+</head>
+<body>
+<h1>test</h1>
+	<button id="get">send get</button>
+	<button id="post">send post</button>
+	<button id="put">send put</button>
+	<button id="delete">send delete</button>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+	
+	   $("#get").on('click',function(){
+	   		$.ajax({
+	   			url:'get',
+	   			type:'get',
+	   			success:function(result){
+	   				console.log('result...',result)
+	   			}
+
+	   		})
+	   })
+	   $("#post").on('click',function(){
+	   		$.ajax({
+	   			url:'post',
+	   			type:'post',
+	   			data:{
+	   				name:'tome',
+	   				age:18
+	   			},
+	   			success:function(result){
+	   				console.log('result...',result)
+	   			}
+
+	   		})
+	   })
+	   $("#put").on('click',function(){
+	   		$.ajax({
+	   			url:'put',
+	   			type:'put',
+	   			success:function(result){
+	   				console.log('result...',result)
+	   			}
+
+	   		})
+	   })
+	   $("#delete").on('click',function(){
+	   		$.ajax({
+	   			url:'delete',
+	   			type:'delete',
+	   			success:function(result){
+	   				console.log('result...',result)
+	   			}
+
+	   		})
+	   })
+	});
+</script>
+</html>

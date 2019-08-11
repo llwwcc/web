@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>00019-js练习伸缩动画.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box1{
+			position: absolute;
+			left: -400px;
+			width: 400px;
+			height: 400px;
+			background-color: #ccc;
+		}
+		#box{
+			position: absolute;
+			top:0;
+			left: 400px;
+			width: 100px;
+			height: 400px;
+			right: 400px;
+			background-color: pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1">
+		<div id="box"></div>
+	</div>
+</body>
+<script>
+	var oBox1 = document.getElementById('box1');
+	var oBox = document.getElementById('box');
+	var timer =null;
+	oBox.onmouseenter=()=>{
+		// clearInterval(timer);
+		tiemr = setInterval(function(){
+		
+			oBox1.style.left =0+'px'
+		},300)
+	}
+</script>
+</html>
