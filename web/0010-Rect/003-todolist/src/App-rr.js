@@ -23,8 +23,7 @@ class App extends Component{
         this.setState((preState)=>({
             list:[...preState.list,preState.task],
             task:''
-        })) 
-        console.log(this.ul)      
+        }))       
     }
     handleChange(ev){
       const task = ev.target.value
@@ -49,7 +48,7 @@ class App extends Component{
         <div className="App">
             <input onChange={this.handleChange} value={this.state.task} />
             <button onClick={this.handleAdd}>提交</button>
-            <ul ref={(ul)=>{this.ul=ul}}>
+            <ul>
                 {
                     this.getItems()
                 }

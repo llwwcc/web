@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0019-js多个盒子随鼠标移动.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100px;
+			height: 100px;
+			background-image: url('../img/03.jpg');
+			background-position: center center;
+		}
+		img{
+			width: 100%;
+			height: 100%;
+		}
+		div:nth-child(1){
+			z-index: 10;
+		}
+		div:nth-child(2){
+			z-index: 9;
+		}
+		div:nth-child(3){
+			z-index: 8;
+		}
+		div:nth-child(4){
+			z-index: 7;
+		}
+		div:nth-child(5){
+			z-index: 6;
+		}
+		div:nth-child(6){
+			z-index: 5;
+		}
+		div:nth-child(7){
+			z-index:4;
+		}
+		div:nth-child(8){
+			z-index: 3;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+<script>
+	function getScrollTop(){
+		return window.pageYoffset || document.documentElement.scrollTop || document.body.scrollTop
+	}
+	function getScrollLeft(){
+		return window.pageXoffset || document.documentElement.scrollLeft || document.body.scrollLeft
+	}
+	var oDiv = document.getElementsByTagName('div')
+	document.onmousemove=function(ev){
+		oDiv[0].style.top=getScrollTop()+ev.clientY+'px';
+		oDiv[0].style.left=getScrollLeft()+ev.clientX+'px';
+		for(var i=oDiv.length-1;i>0;i--){
+		oDiv[i].style.top=oDiv[i-1].offsetTop+20+'px';
+		oDiv[i].style.left=oDiv[i-1].offsetLeft+20+'px';
+		}
+	}
+	
+	
+</script>
+</html>

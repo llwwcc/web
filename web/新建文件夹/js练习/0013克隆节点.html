@@ -13,6 +13,7 @@
 			height: 100px;
 			background: red;
 			margin-bottom: 10px;
+		
 		}
 	</style>
 </head>
@@ -29,7 +30,7 @@
 <script>
 	var oBtn = document.getElementById('btn')
 	var oDiv = document.getElementsByTagName('div')[0];
-	console.log(oDiv)
+	console.log(getComputedStyle(oDiv,false)['opacity'])
 	oBtn.onclick=function(){
 		var box =oDiv.cloneNode(true)
 		document.body.appendChild(box)
