@@ -59,7 +59,7 @@ module.exports = {
                     loader: 'babel-loader',
                     options: {
                         // presets: ['env', 'react'],
-                        presets: ['env','es2015','react','stage-3'],
+                         presets: ['env','es2015','react','stage-3'],
                         plugins: [["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }] ]
                     },
                 }
@@ -78,5 +78,6 @@ module.exports = {
     devServer: {
         contentBase: './dist',//内容的目录
         port:8090,//指定服务端口
+        historyApiFallback:true //在输入栏输入会跳转
     },                
 }
