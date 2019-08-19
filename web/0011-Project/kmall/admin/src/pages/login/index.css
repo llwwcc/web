@@ -1,0 +1,19 @@
+/*
+* @Author: TomChen
+* @Date:   2019-08-14 10:34:41
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-08-14 10:35:37
+*/
+.Login{
+    width: 300px;
+    margin-top: 50px;
+    background: rgba(0,0,150,0.8);
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 5px 5px;
+}
+.login-form-button{
+	width: 100%;
+}
