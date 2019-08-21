@@ -1,3 +1,22 @@
+/*
+* @Author: TomChen
+* @Date:   2018-08-09 10:22:53
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-08-21 09:54:47
+*/
+
+
+/*
+options = {
+	page: //需要显示的页码
+	model: //操作的数据模型
+	query: //查询条件
+	projection: //投影，
+	sort: //排序,
+	populate:[]
+}
+*/
+
 let pagination = (options)=>{
 
 	return new Promise((resolve,reject)=>{
@@ -14,7 +33,7 @@ let pagination = (options)=>{
 		}
 
 		//每页显示条数
-		let limit = options.pageSize || 10;
+		let limit = options.pageSize || 2;
 
 		/*
 		分页:

@@ -1,8 +1,8 @@
 /*
 * @Author: TomChen
 * @Date:   2018-08-04 17:14:00
-* @Last Modified by:   Tom
-* @Last Modified time: 2019-07-01 11:33:49
+* @Last Modified by:   TomChen
+* @Last Modified time: 2019-08-21 09:56:46
 */
 const mongoose = require('mongoose');
 const pagination = require('../util/pagination.js');
@@ -13,7 +13,7 @@ const ProductSchema = new mongoose.Schema({
     ref:'Category'
   },
   detail:{
-  	type:String
+    type:String
   },
   description:{
     type:String
@@ -38,7 +38,7 @@ const ProductSchema = new mongoose.Schema({
     default:'0'//0-下架 1-上架
   },     
   order:{
-  	type:Number,
+    type:Number,
     default:0
   },
   isShow:{
@@ -53,7 +53,7 @@ const ProductSchema = new mongoose.Schema({
   timestamps:true
 });
 
-ProductSchema.statics.getPaginationProducts = function(page,query={},projection='name _id price status order isShow isHot',sort={order:-1}){
+ProductSchema.statics.getPaginationProducts = function(page,query={},projection='name _id price status order isShow isHot',sort={order:-1,_id:-1}){
     return new Promise((resolve,reject)=>{
       let options = {
         page: page,
