@@ -10,9 +10,9 @@ import Layout from 'common/layout'
 
 import "./index.css"
 import { actionCreator } from './store'
+const { Search } = Input;
 
-
-class CategoryList extends Component {
+class ProductList extends Component {
     constructor(props) {
         super(props)
     }
@@ -26,6 +26,7 @@ class CategoryList extends Component {
             total,
             pageSize,
             handlePage,
+            keyword,
             isFetching,            
             handleUpdateIsShow,
             handleUpdateStatus,
@@ -36,7 +37,18 @@ class CategoryList extends Component {
                 title: '商品名称',
                 dataIndex: 'name',
                 key: 'name',
+                render:(name)=>{
+                    if(keyword){
+                        const reg = new RegExp('('+keyword+')','ig')
+                        const html = name.replace(reg,'<b style="color:red;">$1</b>')
+                        return <span dangerouslySetInnerHTML={{__html:html}} ></span>
+                    }else{
+                        return name
+                    }
+                   
+                }
             },
+
             {
                 title: '是否首页显示',
                 dataIndex: 'isShow',
@@ -100,7 +112,8 @@ class CategoryList extends Component {
             {
                 title:'操作',
                 render:(text,record)=><span>
-                   <Link to={"/product/save/"+record._id}>修改</Link>
+
+                    <Link to={"/product/save/"+record._id}>修改</Link>
                     <Divider type="vertical" />
                     <Link to={"/product/detail/"+record._id}>查看</Link>
                 </span>
@@ -108,7 +121,7 @@ class CategoryList extends Component {
         ]        
         const dataSource = list.toJS()        
         return (
-            <div className="User">
+            <div className="ProductList">
              <Layout>
                  <Breadcrumb style={{ margin: '16px 0' }}>
                   <Breadcrumb.Item>首页</Breadcrumb.Item>
@@ -116,6 +129,15 @@ class CategoryList extends Component {
                   <Breadcrumb.Item>商品列表</Breadcrumb.Item>
                 </Breadcrumb>
                 <div style={{marginBottom:16,height:40}} className='claerfix'>
+                    <Search 
+                    placeholder="请输入商品名称" 
+                    onSearch={
+                        value => handlePage(1,value)
+                    } 
+                    enterButton 
+                    style={{width:200}} 
+                    />
+  
                     <Link to="/product/save" style={{float:'right'}}>
                         <Button type="primary">
                             添加商品
@@ -157,12 +179,14 @@ const mapStateToProps = (state) => ({
     current:state.get('product').get('current'),
     total:state.get('product').get('total'),
     pageSize:state.get('product').get('pageSize'), 
-    isFetching:state.get('product').get('isFetching'),  
+    isFetching:state.get('product').get('isFetching'),
+    keyword: state.get('product').get('keyword'), 
+
 })
 //映射方法到组件
 const mapDispatchToProps = (dispatch) =>({
-    handlePage:(page)=>{
-        dispatch(actionCreator.getPageAction(page))
+    handlePage:(page,keyword)=>{
+        dispatch(actionCreator.getPageAction(page,keyword))
     },
     handleUpdateIsShow:(id,newIsShow)=>{
         dispatch(actionCreator.getUpdateIsShowAction(id,newIsShow))
@@ -179,4 +203,4 @@ const mapDispatchToProps = (dispatch) =>({
               
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(CategoryList)
+export default connect(mapStateToProps, mapDispatchToProps)(ProductList)

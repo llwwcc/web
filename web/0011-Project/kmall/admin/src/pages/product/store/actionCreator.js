@@ -65,8 +65,11 @@ export const getSaveAction = (err,values)=>{
         if(hasErr){
             return
         }
-
-        api.addProducts({
+        let request = api.addProducts
+        if(values.id){
+            request = api.updateProducts
+        }
+        request({
             ...values,
             mainImage,
             images,
@@ -74,7 +77,7 @@ export const getSaveAction = (err,values)=>{
         })
         .then(result=>{
             if(result.code == 0){
-                message.success('添加商品成功',()=>{
+                message.success(result.message,()=>{
                     window.location.href = "/product"
                 })
             }else{
@@ -103,12 +106,16 @@ export const getLevelCategoriesAction = ()=>{
         })              
     }
 }
-export const getPageAction = (page)=>{
+export const getPageAction = (page,keyword)=>{
     return (dispatch,getState)=>{
         dispatch(getPageReqestStartAction())
-        api.getProductsList({
+        const options = {
             page:page
-        })
+        }
+        if(keyword){
+            options.keyword = keyword
+        }
+        api.getProductsList(options)
         .then(result=>{
             if(result.code == 0){
                 dispatch(getSetPageAction(result.data))
@@ -208,6 +215,28 @@ export const getUpdateOrderAction = (id,newOrder)=>{
         .catch(err=>{
             message.error('网络错误,请稍后再试')
         })               
+    }
+}
+
+const setProductDetailAction = (payload)=>({
+    type:types.SET_PRODUCT_DETAIL,
+    payload
+})
+
+export const getProductDetailAction = (productId)=>{
+    return (dispatch,getState)=>{
+        api.getProductDetail({
+            id:productId
+        })
+        .then(result=>{
+            if(result.code == 0){
+                dispatch(setProductDetailAction(result.data))
+            }
+            
+        })
+        .catch(err=>{
+            message.error('网络错误,请稍后再试')
+        })              
     }
 }
 

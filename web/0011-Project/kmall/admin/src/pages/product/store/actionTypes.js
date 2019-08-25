@@ -6,3 +6,6 @@ export const PAGE_REQEST_DONE = "product@page_reqest_done"
 export const SET_MAIN_IMAGE = 'product@set_main_image'
 export const SET_IMAGES = 'product@set_images'
 export const SET_DETAIL = 'product@set_detail'
+export const SET_MAIN_IMAGE_ERROR = 'product@set_main_image_error'
+export const SET_IMAGES_ERROR = 'product@set_images_error'
+export const SET_PRODUCT_DETAIL = 'product@set_product_detail'
