@@ -1,3 +1,4 @@
+
 var API_CONFIG = {
     login:                       ['/sessions/users','post'],
     getUsername:                 ['/sessions/username','get'],
@@ -6,9 +7,19 @@ var API_CONFIG = {
     checkUsername:               ['/users/checkUsername','get'],
     getUserinfo:                 ['/sessions/users','get'],
     updateUsers:                 ['/users','put'],
+    
     getHomeCategories:           ['/categories/homeCategories','get'],
     getPositionAds:              ['/ads/positionAds','get'],
     getFloors:                   ['/floors','get'],
+    
+    getProductsList:             ['/products/list','get'],    
+    getProductsDetail:           ['/products/detail','get'],    
+    
+    addCarts:                    ['/carts','post'],    
+    getCartsCount:               ['/carts/count','get'],    
+    getCarts:                    ['/carts','get'],    
+    updateCartsChoices:          ['/carts/choices','put'],    
+    deleteCarts:                 ['/carts','delete'],    
 }
 
 module.exports = {
