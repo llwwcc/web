@@ -1,4 +1,3 @@
-
 var API_CONFIG = {
     login:                       ['/sessions/users','post'],
     getUsername:                 ['/sessions/username','get'],
@@ -20,6 +19,9 @@ var API_CONFIG = {
     getCarts:                    ['/carts','get'],    
     updateCartsChoices:          ['/carts/choices','put'],    
     deleteCarts:                 ['/carts','delete'],    
+    updateCartsCounts:           ['/carts/counts','put'], 
+
+    getOrdersProducts:           ['/orders/products','get'],    
 }
 
 module.exports = {
