@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>007-属性绑定.html</title>
+</head>
+<body>
+	<div id="box">
+		<a href="http://www.taobao.com">淘宝</a>
+		<a v-bind:href='taobaoUrl'>淘宝</a>
+		<a :href='taobaoUrl'>淘宝</a>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#box',
+		data:{
+			taobaoUrl:'http://www.taobao.com'
+		}
+	})
+</script>
+</html>

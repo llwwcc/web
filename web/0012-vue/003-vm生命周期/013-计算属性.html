@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>013-计算属性.html</title>
+</head>
+<body>
+	<div id="box">
+		<p>firstName:{{firstName}}</p>
+		<p>lastName:{{lastName}}</p>
+		<p>lastName:{{getFullName()}}</p>
+		<p>fullName:{{fullName}}</p>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#box',
+		data:{
+			firstName:'chen',
+			lastName:'tome'
+		},
+		methods:{
+			getFullName(){
+				return this.firstName+ "" +this.lastName
+			}
+		},
+		computed:{
+			fullName(){
+				return this.firstName+ "" +this.lastName
+			}
+		}
+	})
+</script>
+</html>

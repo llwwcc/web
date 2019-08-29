@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>010-v-on的使用.html</title>
+</head>
+<body>
+	<div id="box">
+		<button v-on:click='count++'>我被点击了{{count}}</button>
+		<button @click='count++'>我被点击了{{count}}</button>
+	</div>
+	
+</body>
+<script src="js/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#box',
+		data:{
+			count:0,
+			
+		}
+	})
+</script>
+</html>

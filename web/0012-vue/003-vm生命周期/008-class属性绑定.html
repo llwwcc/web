@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>008-class属性绑定.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.active{
+			color: red;
+		}
+		.err{
+			background-color: yellow;
+		}
+		.colo{
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<p>我是文字</p>
+		<p class="active">我是文字</p>
+		<p class="err">我是文字</p>
+		<p :class="{active:true,err:true}">active,err我是文字</p>
+		<p :class="{active:isActive,err:isErr}">active:isActive,err:isErr</p>
+		<p :class="{active:isActive,colo:isColo}">active:isActive,err:isErr</p>
+		
+
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#box',
+		data:{
+			isActive:true,
+			isErr:true,
+			isColo:true
+		}
+	})
+</script>
+</html>

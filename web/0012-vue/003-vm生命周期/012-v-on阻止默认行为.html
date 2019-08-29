@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>012-v-on阻止默认行为.html</title>
+	
+</head>
+<body>
+	<div id="box">
+		<a href="http://www.taobao.com" @click.prevent='largeBox()'>淘宝</a>
+	</div>
+	
+</body>
+<script src="js/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#box',
+		data:{                   
+			count:0,
+			
+		},
+		methods:{
+			largeBox(){
+				console.log('largeBox...')
+			}
+		}
+		
+	})
+</script>
+</html>

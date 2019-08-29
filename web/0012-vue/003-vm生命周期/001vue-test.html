@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-test.html</title>
+</head>
+<body>
+	<div id="box">
+		<p ref='p'>{{message}}</p>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#box',
+		data:{
+            message:'nnn'
+        },
+		created(){
+			console.log('created',this.created)
+		},
+		beforeMount(){
+			console.log('beforeMount',this.beforeMount)
+		},
+		mounted(){
+			console.log('mounted',this.mounted)
+		},
+		beforeUpdate(){
+			console.log('beforeUpdate',this.beforeUpdate)
+		},
+		updated(){
+			console.log('updated',this.updated)
+		},
+		beforeDestroy(){
+			console.log('beforeDestroy',this.beforeDestroy)
+		},
+		destroyed(){
+			console.log('destroyed',this.destroyed)
+		}
+
+	})
+	
+
+	
+</script>
+</html>

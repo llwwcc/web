@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>009-class-style属性绑定.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		
+	</style>
+</head>
+<body>
+	<div id="box">
+		<p>我是文字</p>
+		<p style="color:red">我是文字</p>
+		<p style="background:red;color:blue">我是文字</p>
+		<p :style="{background:bg,color:clr}">我是文字</p>
+		
+		
+
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#box',
+		data:{
+			bg:'red',
+			clr:'blue'
+			
+		}
+	})
+</script>
+</html>

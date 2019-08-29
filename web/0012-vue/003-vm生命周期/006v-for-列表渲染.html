@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>006v-for-列表渲染.html</title>
+</head>
+<body>
+	<div id="box">
+		<table>
+			<tr>
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>成绩</th>
+			</tr>
+			<tr v-for>
+				<td>{{name}}</td>
+				<td>{{age}}</td>
+				<td>{{score}}</td>
+				<td v-if="score>=60">及格</td>
+				<td v-else="score>=60">不及格</td>
+			</tr>
+		</table>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#box',
+		data:{
+			name:'张三',
+			age:18,
+			score:60
+		}
+	})
+</script>
+</html>

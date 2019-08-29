@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue-test.html</title>
+</head>
+<body>
+	<div id="box">
+		<p ref='p'>{{message}}</p>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#box',
+		data:{
+            message:'nnn'
+        }
+	})
+	console.log(vm)
+	console.log(vm.$el===document.getElementById('box'))
+	console.log('000',vm.$data)
+	console.log(vm.$refs.p)
+	vm.$watch('message',function(){
+		console.log('this is a dogs')
+	})
+	// vm.$destroy()
+</script>
+</html>

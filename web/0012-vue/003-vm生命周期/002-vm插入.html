@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>002-vm插入.html</title>
+</head>
+<body>
+	<div id="box">
+		<p>{{message}}</p>
+		<p v-text="message"></p>
+		<p v-once>{{message}}</p>
+		<p v-html>{{message}}</p>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#box',
+		data:{!
+			message:'hello'
+		}
+	})
+</script>
+</html>

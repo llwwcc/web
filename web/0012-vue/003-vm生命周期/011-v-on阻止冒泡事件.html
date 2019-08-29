@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011-v-on阻止冒泡事件.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.largeBox{
+			width: 300px;
+			height: 400px;
+			background: red;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 100px;
+			overflow: hidden;
+		}
+		.bigBox{
+			width: 252px;
+			height: 150px;
+			background: purple;
+			margin-top: 50px;
+
+		}
+		.smallBox{
+			width: 100px;
+			height: 100px;
+			background: blue;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 100px;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		<div class="largeBox" @click='largeBox()'>
+			<div class="bigBox" @click='bigBox()'>
+				<div class="smallBox" @click='smallBox($event)'></div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+<script src="js/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#box',
+		data:{
+			count:0,
+			
+		},
+		methods:{
+			largeBox(){
+				console.log('largeBox....')
+			},
+			bigBox(){
+				console.log('bigBox....')
+			},
+			smallBox(ev){
+				ev.stopPropagation()
+				console.log('smallBox....')
+			},
+
+		}
+	})
+</script>
+</html>

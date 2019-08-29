@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>004v-show的使用.html</title>
+</head>
+<body>
+	<div id="box">
+		
+		<input type="text" v-model="score">
+		<p >我的成绩:{{score}}</p>
+		<p v-show="score>=90">优秀</p>
+		<p v-show="score>=60">及格</p>
+		<p v-show="score<60">不及格</p>
+	</div>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	let vm = new Vue({
+		el:'#box',
+		data:{
+			score:0,
+		}
+	})
+</script>
+</html>
