@@ -26,29 +26,23 @@ var page = {
         this.bindEvent()
     },
     loadShippingList:function(){
-        var html = _util.render(shippingTpl)
+        var _this = this
+        api.getShippingsList({
+            success:function(shippings){
+                //  console.log(shippings)
+                //  var html = _util.render(shippingTpl,{
+                //     shippings:shippings
+                // })
+                // _this.$shippingBox.html(html)
+                _this.renderShipping(shippings)
+            }
+        })
+    },
+    renderShipping(shippings){
+        var html = _util.render(shippingTpl,{
+            shippings:shippings
+        })
         this.$shippingBox.html(html)
-    },
-     loadProvinces:function(){
-        //加载省份列表
-        var provinces = _city.getProvinces()
-        var provincesSelectOptions = this.getSelectOptions(provinces)
-        var $provinceSelect = this.$elem.find('.province-select')
-        $provinceSelect.html(provincesSelectOptions)
-    },
-    loadCities:function(provinceName){
-        //加载省份对应的城市
-        var cities = _city.getCities(provinceName)
-        var citiesSelectOptions = this.getSelectOptions(cities)
-        var $citySelect = this.$elem.find('.city-select')
-        $citySelect.html(citiesSelectOptions)
-    },
-    getSelectOptions:function(arr){
-        var html = '<option value="">请选择</option>'
-        for(var i = 0,length = arr.length;i<length;i++){
-            html += '<option value="'+arr[i]+'">'+arr[i]+'</option>'
-        }
-        return html
     },
     loadProductList:function(){
         var _this = this
@@ -68,10 +62,72 @@ var page = {
         })
     },
     bindEvent:function(){
+         var _this = this
+        //监听新增地址后获取最新数据
+        this.$shippingBox.on('get-shippings',function(ev,shippings){
+            _this.renderShipping(shippings)
+        })
         //1.弹出添加地址面板
         this.$shippingBox.on('click','.shipping-add',function(){
             _modal.show()
         })
+        // 2.删除
+         this.$shippingBox.on('click','.shipping-delete',function(){
+             if(_util.showConfirm('您确定要删除该条地址吗?')){
+                var $this = $(this)
+                var shippingId = $this.parents('.shipping-item').data('shipping-id')
+                api.deleteShippings({
+                    data:{
+                        id:shippingId
+                    },
+                    success:function(shippings){
+                        _this.renderShipping(shippings)
+                    }
+                })
+            }
+        })
+        // 3.编辑
+        this.$shippingBox.on('click','.shipping-edit',function(){
+            var $this = $(this)
+            var shippingId = $this.parents('.shipping-item').data('shipping-id')
+            api.getShippingsDetail({
+                data:{
+                    id:shippingId
+                },
+                success:function(shipping){
+                    _modal.show(shipping)
+                },                
+            })
+        })
+        //4.选中地址
+        this.$shippingBox.on('click','.shipping-item',function(){
+            var $this = $(this)
+            $this.addClass('active')
+            .siblings('.shipping-item').removeClass('active')
+
+            //保存选中的地址id,为了页面重新渲染时可以知道当前选中的是那个地址
+            _this.selectedShippingId = $this.data('shipping-id')
+        })
+        // 5.去支付
+        this.$productBox.on('click','.btn-submit',function(){
+        
+            if(_this.selectedShippingId){
+                api.addOrders({
+                    data:{
+                        shippingId:_this.selectedShippingId
+                    },
+                    success:function(order){
+                        window.location.href = "./payment.html?orderNo="+order.orderNo
+                    },
+                    error:function(msg){
+                        _util.showErrorMsg(msg)
+                    }
+                })
+            }else{
+                _util.showErrorMsg('请选择地址后再提交!')
+            }
+        })
+
     }
 }
 
