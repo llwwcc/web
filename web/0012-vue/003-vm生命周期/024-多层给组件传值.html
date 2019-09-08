@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>024-多层给组件传值.html</title>
+</head>
+<body>
+	<div id="box1">
+		<to-item 
+			v-for='(item,index) in items'
+			:key='index'
+			:task='item.task'
+			:dateline='item.dateline'
+
+		></to-item>	
+	</div>
+	
+	<template id="to-item">
+		<div>
+			<task :task='task'></task>	
+			<dateline :dateline='dateline'></dateline>
+		</div>
+		
+	</template>
+	<template id="task">
+		<span>{{tag}}:{{task}}</span>
+	</template>
+	<template id="dateline">
+		<span>{{tag}}:{{dataline}}</span>
+	</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	var Task = Vue.extend({
+		template:'#task',
+		data(){
+			return{
+				tag:'任务'
+			}
+		},
+		props:{
+			task:String
+		}	
+	})
+	var Dateline = Vue.extend({
+		template:'#dateline',
+		data(){
+			return{
+				tag:'截止日期'
+			}
+		},
+		props:{
+			dateline:String
+		}
+	})
+	
+	
+
+	var ToItem =Vue.extend({
+		template:'#to-item',
+		data(){
+			return{
+				count:0
+			}
+			
+		},
+		components:{
+            task:Task,
+            dateline:Dateline
+        },
+        props:{
+        	task:String,
+        	dateline:String
+        }
+
+
+	})
+	// 注册
+	Vue.component('to-item',ToItem)
+	var vm = new Vue({
+		el:'#box1',
+		data:{
+			items:[
+				{
+					 task:'吃饭',
+                    dateline:'今天中午'
+
+				},
+				{
+					 task:'学习Vue',
+                    dateline:'明天的明天'
+				}
+			]
+		},
+		
+	
+	})
+	
+</script>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>020-组件分离.html</title>
+</head>
+<body>
+	<div id="box1">
+		<button-counter>22</button-counter>
+		<button-counter>22</button-counter>
+		<button-counter></button-counter>
+	</div>
+	<div id="box2">
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+	</div>
+	<template id="button-conter">
+		<button @click="count++">我被点击{{ count }}次</button>
+	</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	// 定义组件
+	/*
+	Vue.component('button-counter',{
+		// data必须是函数
+		data(){
+			return{
+				count:0
+			}
+			
+		},
+	template:'#button-conter'
+
+	})
+	*/
+	// 定义组件
+	var ButtonConter =Vue.extend({
+		template:'#button-conter',
+		data(){
+			return{
+				count:0
+			}
+			
+		}
+
+	})
+	// 注册
+	Vue.component('button-counter',ButtonConter)
+	var vm = new Vue({
+		el:'#box1',
+		data:{
+			
+		}
+	
+	})
+	var vm = new Vue({
+		el:'#box2',
+		data:{
+			
+		}
+	
+	})
+</script>
+</html>

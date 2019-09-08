@@ -1,0 +1,7 @@
+<template name="star">         
+  <view class='star-wrap'>
+    <image src="/img/star1.png"></image>
+    <image src="/img/star.png"></image>
+    <text class='score'>{{score}}</text>
+  </view>
+</template>      

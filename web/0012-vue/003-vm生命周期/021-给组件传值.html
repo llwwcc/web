@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>021-给组件传值.html</title>
+</head>
+<body>
+	<div id="box1">
+		<to-item task='睡觉'></to-item>
+		<to-item task='吃饭'></to-item>
+		<to-item task='打豆豆'></to-item>
+		
+		
+	</div>
+	
+	<template id="to-item">
+		<div>{{task}}</div>
+	</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	
+	
+	// 定义组件
+	var ToItem =Vue.extend({
+		template:'#to-item',
+		data(){
+			return{
+				count:0
+			}
+			
+		},
+		props:{
+			task:String
+		}
+
+
+	})
+	// 注册
+	Vue.component('to-item',ToItem)
+	var vm = new Vue({
+		el:'#box1',
+		data:{
+			
+		},
+		
+	
+	})
+	
+</script>
+</html>

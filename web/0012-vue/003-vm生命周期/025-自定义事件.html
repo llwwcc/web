@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>025-自定义事件.html</title>
+</head>
+<body>
+	<div id="box1">
+		<button-counter  @add-total-event="addTotal()">22</button-counter>
+		<button-counter>22</button-counter>
+		<p>我一共点击了{{total}}次</p>
+	</div>
+	
+	<template id="button-conter">
+		<button @click="addCount()">我被点击{{ count }}次</button>
+	</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+	Vue.component('button-counter',{
+		// data必须是函数
+		data(){
+			return{
+				count:0
+			}
+			
+		},
+		methods:{
+			addCount(){
+				this.conut++
+				this.$emit('add-total-event')
+			}
+		},
+		template:'#button-conter'
+
+	})
+	var vm = new Vue({
+		el:'#box1',
+		data:{
+			total:0
+		},
+		methods:{
+			addTotal(){
+				this.total++
+			}
+		}
+	
+	})
+
+</script>
+</html>

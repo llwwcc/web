@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/movie/movie",
+    "pages/movie/movie-more/movie-more",
+    "pages/index/index",
+    "pages/article/article",
+    "pages/logs/logs",
+    "pages/article/article-detail/article-detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ccc",
+    "navigationBarTitleText": "跨猪",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color":"#333",
+    "selectedColor":"#00f",
+    "backgroundColor":"#ccc",
+    "borderStyle":"white",
+    "position":"bottom",
+    "list": [
+      {
+        "iconPath":"/img/star.png",
+        "selectedIconPath": "/img/star.png",
+        "pagePath": "pages/article/article",
+        "text": "文章"
+      },
+      {
+        "iconPath": "/img/star.png",
+        "selectedIconPath": "/img/star.png",        
+        "pagePath": "pages/movie/movie",
+        "text": "电影"
+      }
+    ]
+  },  
+  "sitemapLocation": "sitemap.json",
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ]
+}

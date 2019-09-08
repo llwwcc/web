@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>023-多层给组件.html</title>
+</head>
+<body>
+	<div id="box1">
+		<to-item 
+			
+		></to-item>	
+	</div>
+	
+	<template id="to-item">
+		<div>
+			<task></task>	
+			<dateline></dateline>
+		</div>
+		
+	</template>
+	<template id="task">
+		<span>{{tag}}:吃饭</span>
+	</template>
+	<template id="dateline">
+		<span>{{tag}}:今天中午</span>
+	</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	var Task = Vue.extend({
+		template:'#task',
+		data(){
+			return{
+				tag:'任务'
+			}
+		}	
+	})
+	var Dateline = Vue.extend({
+		template:'#dateline',
+		data(){
+			return{
+				tag:'截止日期'
+			}
+		}
+	})
+	
+	
+
+	var ToItem =Vue.extend({
+		template:'#to-item',
+		data(){
+			return{
+				count:0
+			}
+			
+		},
+		components:{
+            task:Task,
+            dateline:Dateline
+        }
+
+
+	})
+	// 注册
+	Vue.component('to-item',ToItem)
+	var vm = new Vue({
+		el:'#box1',
+		data:{
+			items:[
+
+			]
+		},
+		
+	
+	})
+	
+</script>
+</html>

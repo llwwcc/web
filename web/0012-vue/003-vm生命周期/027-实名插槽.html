@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>027-实名插槽.html</title>
+</head>
+<body>
+	<div id="box1">
+		 <layout>
+            <div slot="focus">首页焦点区域</div>
+            <div slot="content">首页主要内容</div>
+        </layout>
+	</div>
+	
+	<template id="button-conter">
+		<div>
+		 <nav>顶部导航</nav>
+            <slot name="focus">焦点区域</slot>
+            <slot name="content">主要内容</slot>
+            <footer>底部</footer>
+		</div>
+	</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+	Vue.component('layout',{
+		
+		template:'#button-conter'
+
+	})
+	var vm = new Vue({
+		el:'#box1',
+		data:{
+			
+		}
+		
+	
+	})
+
+</script>
+</html>

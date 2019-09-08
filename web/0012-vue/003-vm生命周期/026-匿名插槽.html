@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>026-匿名插槽.html</title>
+</head>
+<body>
+	<div id="box1">
+		<layout>首页主要</layout>
+	</div>
+	
+	<template id="button-conter">
+		<div>
+			<nav>顶部</nav>
+			<slot>焦点区域</slot>
+			<footer>底部区域</footer>
+		</div>
+	</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+
+	Vue.component('layout',{
+		
+		template:'#button-conter'
+
+	})
+	var vm = new Vue({
+		el:'#box1',
+		data:{
+			
+		}
+		
+	
+	})
+
+</script>
+</html>

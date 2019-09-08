@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>022-从data中给组件传值.html</title>
+</head>
+<body>
+	<div id="box1">
+		<to-item 
+			v-for='item in items'
+			:task='item.task'
+		></to-item>
+		
+		
+	</div>
+	
+	<template id="to-item">
+		<div>{{task}}</div>
+	</template>
+</body>
+<script src="js/vue.js"></script>
+<script>
+	
+	
+	// 定义组件
+	var ToItem =Vue.extend({
+		template:'#to-item',
+		data(){
+			return{
+				count:0
+			}
+			
+		},
+		props:{
+			task:String
+		}
+
+
+	})
+	// 注册
+	Vue.component('to-item',ToItem)
+	var vm = new Vue({
+		el:'#box1',
+		data:{
+			items:[
+				{
+				task:'吃饭'
+				},
+				{
+				task:'睡觉'
+				}
+			]
+		},
+		
+	
+	})
+	
+</script>
+</html>

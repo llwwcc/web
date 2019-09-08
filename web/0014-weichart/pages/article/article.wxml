@@ -1,0 +1,85 @@
+
+<import src="./article-item-template/article-item-template.wxml" />
+<view>
+  <swiper indicator-dots="true"
+  autoplay="true" interval="500" duration="500">
+    <swiper-item>
+      <image src="/img/7.gif" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+      <swiper-item>
+      <image src="/img/7.gif" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+      <swiper-item>
+      <image src="/img/7.gif" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+</swiper>
+
+  <!-- <view class='article-wrap'>
+      <view class='article-item'>
+        <view class='article-head'>
+          <image class='article-head-avatar' src='/img/7.gif'></image>
+          <text class='article-head-date'>2019-05-06</text>
+        </view>
+        <text class='article-title'>我是文章标题</text>
+        <image class='article-img' src='/img/7.gif'></image>
+        <text class='article-desc'>我是描述</text>
+        <view class='article-footer'>
+          <image class='article-footer-icon' src='/img/7.gif'></image>
+          <text class='article-footer-text'>20</text>
+          <image class='article-footer-icon' src='/img/7.gif'></image>
+          <text class='article-footer-text'>33</text> 
+        </view>
+      </view>
+      <view class='article-item'>
+        <view class='article-head'>
+          <image class='article-head-avatar' src='/img/7.gif'></image>
+          <text class='article-head-date'>2019-05-06</text>
+        </view>
+        <text class='article-title'>我是文章标题</text>
+        <image class='article-img' src='/img/7.gif'></image>
+        <text class='article-desc'>我是描述</text>
+        <view class='article-footer'>
+          <image class='article-footer-icon' src='/img/7.gif'></image>
+          <text class='article-footer-text'>20</text>
+          <image class='article-footer-icon' src='/img/7.gif'></image>
+          <text class='article-footer-text'>33</text>        
+        </view>
+      </view>
+  </view> -->
+
+  <!-- <view> {{ text }} </view> -->
+
+  <!-- <view  wx:for="{{articles}}" wx:key="key" >
+    {{index}}: {{item.title}}
+  </view> -->
+  
+  <!-- <view wx:for="{{articles}}" wx:for-index="idx" wx:for-item="articles" wx:key="key">
+    {{idx}}: {{articles.title}}
+  </view> -->
+  
+    <view class='article-wrap'>
+      <block wx:for="{{articles}}" wx:for-index="idx" wx:for-item="articles" wx:key="key">
+        {{idx}}: {{articles.title}}
+        <!-- <view class='article-item'>
+          <view class='article-head'>
+            <image class='article-head-avatar' src='{{articles.img}}'></image>
+            <text class='article-head-date'>2019-05-06</text>
+          </view>
+          <text class='article-title'>{{articles.title}}</text>
+          <image class='article-img' src='{{articles.img}}'></image>
+          <text class='article-desc'>{{articles.desc}}</text>
+          <view class='article-footer'>
+            <image class='article-footer-icon' src='{{articles.img}}'></image>
+            <text class='article-footer-text'>{{articles.star}}</text>
+            <image class='article-footer-icon' src='{{articles.img}}'></image>
+            <text class='article-footer-text'>{{articles.view}}</text> 
+          </view>
+        </view> -->
+        <view catchtap="articledatail" data-article-id='{{articles.articleId}}'>
+            <template is="articleItem" data="{{...articles}}"/>
+        </view>
+      
+      </block>
+    </view >
+</view>
+

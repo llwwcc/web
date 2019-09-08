@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>031-动画的animatecss3使用.html</title>
+	<link rel="stylesheet" href="css/animate.css">
+		
+</head>
+<body>
+	<div id="box1">
+         <button @click="show=!show">切换</button>
+         <transition  
+         	enter-active-class="animated swing"
+        	leave-active-class="animated flash"
+       		appear>
+         	<p v-if="show">hello</p>
+         </transition>
+	</div>
+	
+	
+	
+</body>
+<script src="js/vue.js"></script>
+<script>
+	var vm = new Vue({
+		el:'#box1',
+		data:{
+			 show:true
+		}
+		
+	
+	})
+
+</script>
+</html>

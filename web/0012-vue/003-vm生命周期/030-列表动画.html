@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>030-列表动画.html</title>
+	<style>
+		.fade-enter-active, .fade-leave-active{
+		  transition: opacity .5s;
+		}
+		.fade-enter, .fade-leave-to{
+		  opacity: 0;
+		}
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 500px;
+			margin: 100px auto;
+		}
+		input{
+			width: 390px;
+			height: 40px;
+		}
+		button{
+			width: 50px;
+			height: 40px;
+			margin-left: -5px;
+		}
+		li{
+			list-style: none;
+			line-height: 40px;
+			border-bottom: 1px dashed #000;
+
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1">
+        <input type="text" v-model="task">
+        <button @click='addLi()'>增加</button>
+        <ul>
+        	<li
+        		v-for="(item,index) in items"
+                @click="del(index)"
+                :key="''+index"
+
+        	>
+        	{{item}}	
+        	</li>
+        </ul>
+	</div>
+	
+	
+	
+</body>
+<script src="js/vue.js"></script>
+<script>
+	var vm = new Vue({
+		el:'#box1',
+		data:{
+			 items:['吃饭','睡觉觉'],
+			 task:''
+		},
+		methods:{
+			addLi(){
+				this.items.push(this.task)
+			},
+			del(index){
+				 this.items.splice(index,1)
+			}
+		}
+
+	})
+
+</script>
+</html>
